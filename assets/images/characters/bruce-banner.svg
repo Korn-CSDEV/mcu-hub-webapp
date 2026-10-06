@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="hulkBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2E7D32"/>
+      <stop offset="100%" stop-color="#0D2E12"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" rx="100" fill="url(#hulkBg)" stroke="#76FF03" stroke-width="3"/>
+  <!-- Gamma radiation fist/core -->
+  <circle cx="100" cy="100" r="50" fill="#1B5E20"/>
+  <circle cx="100" cy="100" r="30" fill="#4CAF50"/>
+  <circle cx="100" cy="100" r="14" fill="#B2FF59"/>
+  <!-- Gamma Trefoil symbol -->
+  <path d="M100 65 L108 85 L92 85 Z M70 120 L86 108 L78 94 Z M130 120 L122 94 L114 108 Z" fill="#FFFFFF"/>
+</svg>

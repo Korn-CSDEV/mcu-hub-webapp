@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#1C2833" stop-opacity="0.85"/>
+      <stop offset="60%" stop-color="#707B7C" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#080B11"/>
+    </radialGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#C0392B" flood-opacity="0.8"/>
+    </filter>
+    <linearGradient id="goldText" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF"/>
+      <stop offset="100%" stop-color="#DDD"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="600" fill="#0A0D14"/>
+  <rect width="400" height="600" fill="url(#bgGrad)"/>
+
+  <!-- Comic Grid / Halftone Texture Overlay -->
+  <circle cx="200" cy="270" r="140" fill="none" stroke="#C0392B" stroke-opacity="0.15" stroke-width="1.5"/>
+  <circle cx="200" cy="270" r="180" fill="none" stroke="#C0392B" stroke-opacity="0.1" stroke-width="1"/>
+
+  <!-- Marvel Studios Header -->
+  <g transform="translate(130, 40)">
+    <rect width="140" height="26" fill="#ED1D24" rx="2"/>
+    <text x="70" y="18" fill="#FFFFFF" font-family="'Impact', sans-serif" font-size="16" letter-spacing="2" text-anchor="middle">MARVEL STUDIOS</text>
+  </g>
+
+  <!-- Phase Pill Tag -->
+  <g transform="translate(145, 78)">
+    <rect width="110" height="20" fill="none" stroke="#C0392B" stroke-width="1.5" rx="10"/>
+    <text x="55" y="14" fill="#C0392B" font-family="'Arial Black', sans-serif" font-size="9" letter-spacing="2" text-anchor="middle">PHASE 2</text>
+  </g>
+
+  <!-- Center Emblem Art -->
+  <g transform="translate(0, 0)">
+    <circle cx="200" cy="270" r="50" fill="#2C3E50" stroke="#BDC3C7" stroke-width="4"/>
+                     <polygon points="200,235 210,258 234,258 214,272 222,295 200,281 178,295 186,272 166,258 190,258" fill="#C0392B"/>
+                     <circle cx="200" cy="270" r="14" fill="#BDC3C7"/>
+  </g>
+
+  <!-- Bottom Details Gradient Shade -->
+  <rect x="0" y="380" width="400" height="220" fill="url(#bgGrad)" opacity="0.95"/>
+  <rect x="0" y="420" width="400" height="180" fill="#080B11" opacity="0.85"/>
+
+  <!-- Movie Title and Subtitle -->
+  <text x="200" y="460" fill="url(#goldText)" font-family="'Impact', 'Arial Black', sans-serif" font-size="30" letter-spacing="1" text-anchor="middle">THE WINTER SOLDIER</text>
+  <text x="200" y="490" fill="#C0392B" font-family="'Arial Black', sans-serif" font-size="11" letter-spacing="1.5" text-anchor="middle">IN SERVICE OF FREEDOM</text>
+  
+  <!-- Divider -->
+  <line x1="80" y1="520" x2="320" y2="520" stroke="#C0392B" stroke-width="1.5" stroke-opacity="0.4"/>
+  
+  <!-- Release Year & Badges -->
+  <text x="200" y="550" fill="#E0E6ED" font-family="'Arial', sans-serif" font-size="13" font-weight="bold" letter-spacing="3" text-anchor="middle">2014 • CINEMATIC EXPERIENCE</text>
+
+  <!-- Outer Frame Border -->
+  <rect x="10" y="10" width="380" height="580" fill="none" stroke="#C0392B" stroke-width="1" stroke-opacity="0.25" rx="8"/>
+</svg>

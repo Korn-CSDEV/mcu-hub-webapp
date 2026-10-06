@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <radialGradient id="bdGrad" cx="70%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#78281F" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#B7950B" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#06080D"/>
+    </radialGradient>
+    <linearGradient id="fadeLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06080D" stop-opacity="0.95"/>
+      <stop offset="40%" stop-color="#06080D" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#06080D" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#F4D03F" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <!-- Base Canvas -->
+  <rect width="1280" height="720" fill="#06080D"/>
+  <rect width="1280" height="720" fill="url(#bdGrad)"/>
+
+  <!-- Cinematic Background Graphic Elements -->
+  <circle cx="850" cy="360" r="320" fill="none" stroke="#F4D03F" stroke-opacity="0.12" stroke-width="2"/>
+  <circle cx="850" cy="360" r="460" fill="none" stroke="#78281F" stroke-opacity="0.08" stroke-width="1.5"/>
+
+  <!-- Center Emblem Scaled Up On Right Side -->
+  <g transform="translate(650, 100) scale(1.8)">
+    <!-- Best Friends Pendant style split -->
+                     <path d="M150 270 C150 240 170 220 200 220 L200 320 C170 320 150 300 150 270 Z" fill="#B03A2E"/>
+                     <path d="M250 270 C250 240 230 220 200 220 L200 320 C230 320 250 300 250 270 Z" fill="#F4D03F"/>
+                     <line x1="200" y1="215" x2="200" y2="325" stroke="#FFFFFF" stroke-width="4"/>
+                     <circle cx="178" cy="265" r="7" fill="#111111"/>
+                     <circle cx="222" cy="265" r="7" fill="#111111"/>
+  </g>
+
+  <!-- Left Side Vignette / Text Backdrop -->
+  <rect width="1280" height="720" fill="url(#fadeLeft)"/>
+
+  <!-- Top Marvel Studios Tag -->
+  <g transform="translate(90, 70)">
+    <rect width="160" height="32" fill="#ED1D24" rx="3"/>
+    <text x="80" y="22" fill="#FFFFFF" font-family="'Impact', sans-serif" font-size="18" letter-spacing="3" text-anchor="middle">MARVEL STUDIOS</text>
+  </g>
+
+  <!-- Content Section on Left -->
+  <text x="90" y="160" fill="#F4D03F" font-family="'Arial Black', sans-serif" font-size="15" letter-spacing="4">PHASE 5 • RELEASE YEAR 2024</text>
+  <text x="90" y="235" fill="#FFFFFF" font-family="'Impact', 'Arial Black', sans-serif" font-size="64" letter-spacing="2">DEADPOOL & WOLVERINE</text>
+  <text x="90" y="280" fill="#F4D03F" font-family="'Arial Black', sans-serif" font-size="18" letter-spacing="2">MAXIMUM EFFORT. THE TEAM-UP OF THE CENTURY.</text>
+
+  <rect x="90" y="320" width="120" height="4" fill="#F4D03F"/>
+
+  <!-- Aesthetic Technical Metadata -->
+  <g transform="translate(90, 360)">
+    <rect width="90" height="28" fill="#151C2C" stroke="#2B3650" rx="6"/>
+    <text x="45" y="19" fill="#00E5FF" font-family="'Arial Black', sans-serif" font-size="12" text-anchor="middle">4K ULTRA HD</text>
+
+    <rect x="105" width="85" height="28" fill="#151C2C" stroke="#2B3650" rx="6"/>
+    <text x="147" y="19" fill="#FFD700" font-family="'Arial Black', sans-serif" font-size="12" text-anchor="middle">IMAX RATIO</text>
+
+    <rect x="205" width="85" height="28" fill="#151C2C" stroke="#2B3650" rx="6"/>
+    <text x="247" y="19" fill="#FF5252" font-family="'Arial Black', sans-serif" font-size="12" text-anchor="middle">DOLBY ATMOS</text>
+  </g>
+
+  <!-- Bottom Cinematic Gradient -->
+  <rect x="0" y="620" width="1280" height="100" fill="#06080D" opacity="0.9"/>
+</svg>

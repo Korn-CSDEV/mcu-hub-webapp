@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="witchBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3D0014"/>
+      <stop offset="100%" stop-color="#140006"/>
+    </radialGradient>
+    <filter id="chaosGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#FF1744" flood-opacity="0.9"/>
+    </filter>
+  </defs>
+  <rect width="200" height="200" rx="100" fill="url(#witchBg)" stroke="#FF1744" stroke-width="3"/>
+  <!-- Chaos Magic Rune Aura -->
+  <circle cx="100" cy="100" r="70" fill="none" stroke="#FF1744" stroke-width="1.5" stroke-dasharray="6,4" stroke-opacity="0.6"/>
+  <!-- Scarlet Tiara / Crown -->
+  <path d="M50 115 L60 70 L80 100 L100 45 L120 100 L140 70 L150 115 Q100 135 50 115 Z" fill="#B71C1C" stroke="#FF5252" stroke-width="2" filter="url(#chaosGlow)"/>
+  <path d="M70 110 L100 65 L130 110 Q100 120 70 110 Z" fill="#880E4F"/>
+  <!-- Glowing Scarlet Orb in Center -->
+  <circle cx="100" cy="100" r="14" fill="#FF1744" filter="url(#chaosGlow)"/>
+  <circle cx="100" cy="100" r="8" fill="#FFF"/>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="marvelBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0D47A1"/>
+      <stop offset="100%" stop-color="#051B3D"/>
+    </radialGradient>
+    <filter id="starGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#FFD700" flood-opacity="0.9"/>
+    </filter>
+  </defs>
+  <rect width="200" height="200" rx="100" fill="url(#marvelBg)" stroke="#ED1D24" stroke-width="3"/>
+  <!-- Red Chest V -->
+  <polygon points="35,40 165,40 100,140" fill="#ED1D24"/>
+  <polygon points="55,40 145,40 100,120" fill="#C62828"/>
+  <!-- Gold Hala Star (8-point) -->
+  <polygon points="100,60 105,85 130,90 105,95 100,120 95,95 70,90 95,85" fill="#FFD700" filter="url(#starGlow)"/>
+  <polygon points="100,75 104,87 116,90 104,93 100,105 96,93 84,90 96,87" fill="#FFFFFF"/>
+</svg>

@@ -1,0 +1,25 @@
+{
+  "name": "mcu-review-hub",
+  "version": "1.0.0",
+  "description": "Marvel Cinematic Universe (MCU) Review & Hub - Full-Stack Web App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "mcu",
+    "marvel",
+    "review",
+    "spa",
+    "express",
+    "nodejs",
+    "tailwindcss"
+  ],
+  "author": "KornDeV",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}

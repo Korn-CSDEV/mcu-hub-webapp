@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="thorBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1A2B4C"/>
+      <stop offset="100%" stop-color="#0B132B"/>
+    </radialGradient>
+    <filter id="lightningGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#4DEEEA" flood-opacity="0.9"/>
+    </filter>
+  </defs>
+  <rect width="200" height="200" rx="100" fill="url(#thorBg)" stroke="#4DEEEA" stroke-width="3"/>
+  <!-- Mjolnir Hammer -->
+  <!-- Handle -->
+  <rect x="95" y="90" width="10" height="75" rx="3" fill="#8D6E63"/>
+  <rect x="94" y="105" width="12" height="4" fill="#CFD8DC"/>
+  <rect x="94" y="120" width="12" height="4" fill="#CFD8DC"/>
+  <rect x="94" y="135" width="12" height="4" fill="#CFD8DC"/>
+  <circle cx="100" cy="168" r="7" fill="#5D4037"/>
+  <!-- Hammer Head -->
+  <rect x="60" y="45" width="80" height="48" rx="6" fill="#B0BEC5" stroke="#ECEFF1" stroke-width="2"/>
+  <polygon points="52,50 60,45 60,93 52,88" fill="#78909C"/>
+  <polygon points="148,50 140,45 140,93 148,88" fill="#78909C"/>
+  <!-- Asgardian Rune Triquetra -->
+  <circle cx="100" cy="69" r="10" fill="none" stroke="#37474F" stroke-width="2"/>
+  <!-- Lightning bolts -->
+  <path d="M40 30 L55 55 L45 60 L65 85" stroke="#FFFFFF" stroke-width="2.5" fill="none" filter="url(#lightningGlow)"/>
+  <path d="M160 30 L145 55 L155 60 L135 85" stroke="#FFFFFF" stroke-width="2.5" fill="none" filter="url(#lightningGlow)"/>
+</svg>

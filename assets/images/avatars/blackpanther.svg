@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="pantherBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1C1427"/>
+      <stop offset="100%" stop-color="#0A0710"/>
+    </radialGradient>
+    <filter id="purpleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#B388FF" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+  <rect width="200" height="200" rx="100" fill="url(#pantherBg)" stroke="#7C4DFF" stroke-width="3"/>
+  <!-- Wakandan Vibranium Mask -->
+  <path d="M60 55 L75 40 L90 60 L110 60 L125 40 L140 55 L145 110 C145 150 125 170 100 175 C75 170 55 150 55 110 Z" fill="#15171C" stroke="#373E4D" stroke-width="2"/>
+  <!-- Purple Kinetic Energy Veins -->
+  <path d="M75 75 Q100 90 125 75 M70 110 Q100 130 130 110 M100 60 L100 160" stroke="#B388FF" stroke-width="2" fill="none" filter="url(#purpleGlow)"/>
+  <!-- Silver Eyes -->
+  <polygon points="70,85 92,95 86,102 70,95" fill="#E0E0E0"/>
+  <polygon points="130,85 108,95 114,102 130,95" fill="#E0E0E0"/>
+  <!-- Claw necklace accents -->
+  <polygon points="90,165 100,150 96,165" fill="#CFD8DC"/>
+  <polygon points="110,165 100,150 104,165" fill="#CFD8DC"/>
+  <polygon points="80,160 88,150 85,160" fill="#CFD8DC"/>
+  <polygon points="120,160 112,150 115,160" fill="#CFD8DC"/>
+</svg>

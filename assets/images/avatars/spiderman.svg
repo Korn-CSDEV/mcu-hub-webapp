@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="spideyBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D50000"/>
+      <stop offset="100%" stop-color="#550000"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" rx="100" fill="#0C1B33" stroke="#D50000" stroke-width="3"/>
+  <!-- Mask shape -->
+  <ellipse cx="100" cy="100" rx="65" ry="75" fill="url(#spideyBg)"/>
+  <!-- Web lines on mask -->
+  <path d="M100 25 L100 175 M35 100 L165 100 M55 45 L145 155 M55 155 L145 45" stroke="#1A1A1A" stroke-width="1.8" stroke-opacity="0.7"/>
+  <ellipse cx="100" cy="100" rx="35" ry="40" fill="none" stroke="#1A1A1A" stroke-width="1.8" stroke-opacity="0.7"/>
+  <ellipse cx="100" cy="100" rx="55" ry="60" fill="none" stroke="#1A1A1A" stroke-width="1.8" stroke-opacity="0.7"/>
+  <!-- Left Eye -->
+  <path d="M60 85 Q75 65 92 88 Q88 120 62 105 Z" fill="#FFFFFF" stroke="#111111" stroke-width="6"/>
+  <!-- Right Eye -->
+  <path d="M140 85 Q125 65 108 88 Q112 120 138 105 Z" fill="#FFFFFF" stroke="#111111" stroke-width="6"/>
+</svg>

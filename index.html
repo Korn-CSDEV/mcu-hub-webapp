@@ -42,25 +42,24 @@
 <body class="bg-[#06080D] text-slate-100 min-h-screen flex flex-col antialiased comic-bg-pattern selection:bg-[#ED1D24] selection:text-white">
 
   <!-- ========================================================================
-       1. MARVEL INTRO LOADING SCREEN (2.2 SECONDS CINEMATIC)
+       1. MARVEL INTRO LOADING SCREEN (5.0 SECONDS CINEMATIC)
        ======================================================================== -->
   <div id="marvelIntroOverlay" class="intro-glow-ring">
     <!-- Rapid comic flipping texture layer -->
     <div class="comic-flip-layer"></div>
     
     <!-- Central Cinematic Marvel Studios Logo Entrance -->
-    <div class="marvel-logo-anim relative z-10 flex flex-col items-center px-4 text-center">
-      <img src="assets/images/logos/marvel-studios-logo.svg" alt="Marvel Studios" class="w-72 sm:w-96 md:w-[480px] drop-shadow-[0_0_35px_rgba(255,255,255,0.7)]">
+    <div id="marvelLogoContainer" class="marvel-logo-anim relative z-10 flex flex-col items-center px-4 text-center">
+      <img src="assets/images/logos/marvel-studios-logo.svg" alt="Marvel Studios" class="w-72 sm:w-96 md:w-[500px] drop-shadow-[0_0_35px_rgba(255,255,255,0.7)]">
       <p class="font-bebas text-sm sm:text-base tracking-[0.3em] text-white/90 uppercase mt-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
         CINEMATIC UNIVERSE • REVIEW & HUB
       </p>
     </div>
 
-    <!-- Skip Intro Button -->
-    <button id="skipIntroBtn" class="absolute bottom-6 right-6 z-20 bg-black/60 hover:bg-black/90 text-white/80 hover:text-white px-4 py-2 rounded-full text-xs font-semibold backdrop-blur-md border border-white/20 transition-all flex items-center gap-2">
-      <span>Skip Intro</span>
-      <i class="fa-solid fa-forward-step text-[11px]"></i>
-    </button>
+    <!-- Intro Progress Bar Line (3.0s) -->
+    <div class="absolute bottom-0 left-0 right-0 h-1.5 bg-black/60 z-20 overflow-hidden">
+      <div id="introProgressBar" class="h-full bg-gradient-to-r from-amber-400 via-white to-amber-300 w-0"></div>
+    </div>
   </div>
 
   <!-- ========================================================================
@@ -71,45 +70,45 @@
       <div class="flex items-center justify-between h-20">
         
         <!-- Brand Logo & Title -->
-        <a href="#browse" class="flex items-center space-x-3 group cursor-pointer" id="navLogoBtn">
-          <img src="assets/images/logos/marvel-studios-logo.svg" alt="Marvel Studios" class="h-8 sm:h-9 w-auto drop-shadow-[0_0_10px_rgba(237,29,36,0.6)] group-hover:scale-105 transition-transform duration-300">
-          <div class="hidden sm:flex flex-col">
-            <span class="font-bebas text-xl sm:text-2xl tracking-wider text-white group-hover:text-mcu-red transition-colors flex items-center gap-1.5">
-              MCU HUB <span class="text-[10px] font-sans font-bold uppercase tracking-widest bg-mcu-red/20 text-mcu-red px-1.5 py-0.5 rounded border border-mcu-red/40">SPA</span>
+        <a href="#browse" class="flex items-center space-x-2.5 sm:space-x-3 group cursor-pointer flex-shrink-0" id="navLogoBtn">
+          <img src="assets/images/logos/marvel-studios-logo.svg" alt="Marvel Studios" class="h-7 sm:h-9 w-auto drop-shadow-[0_0_10px_rgba(237,29,36,0.6)] group-hover:scale-105 transition-transform duration-300">
+          <div class="flex flex-col">
+            <span class="font-bebas text-lg sm:text-2xl tracking-wider text-white group-hover:text-mcu-red transition-colors flex items-center gap-1">
+              MCU HUB <span class="text-[9px] font-sans font-bold uppercase tracking-widest bg-mcu-red/20 text-mcu-red px-1.5 py-0.2 rounded border border-mcu-red/40">SPA</span>
             </span>
-            <span class="text-[10px] uppercase tracking-widest text-slate-400 font-semibold -mt-1">Review & Universe Portal</span>
+            <span class="text-[9px] uppercase tracking-widest text-slate-400 font-semibold -mt-1 hidden sm:inline">Universe Portal</span>
           </div>
         </a>
 
         <!-- Desktop Navigation Tabs -->
         <nav class="hidden lg:flex items-center space-x-1" id="desktopNavLinks">
-          <button data-view="browse" class="nav-tab-btn active px-3.5 py-2 rounded-lg text-xs font-bold text-white bg-white/10 hover:bg-white/15 transition-all flex items-center gap-2">
-            <i class="fa-solid fa-film text-mcu-red"></i> All Titles
+          <button data-view="browse" class="nav-tab-btn active px-3.5 py-2 rounded-lg text-xs font-semibold text-white bg-white/10 hover:bg-white/15 transition-all whitespace-nowrap" data-i18n="navAllTitles">
+            All Titles
           </button>
-          <button data-view="sagas" class="nav-tab-btn px-3.5 py-2 rounded-lg text-xs font-bold text-slate-300 hover:text-white hover:bg-white/5 transition-all flex items-center gap-2">
-            <i class="fa-solid fa-layer-group text-mcu-gold"></i> Sagas & Phases
+          <button data-view="sagas" class="nav-tab-btn px-3.5 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition-all whitespace-nowrap" data-i18n="navSagas">
+            Sagas & Phases
           </button>
-          <button data-view="characters" class="nav-tab-btn px-3.5 py-2 rounded-lg text-xs font-bold text-slate-300 hover:text-white hover:bg-white/5 transition-all flex items-center gap-2">
-            <i class="fa-solid fa-mask text-mcu-cyan"></i> Character Hub
+          <button data-view="characters" class="nav-tab-btn px-3.5 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition-all whitespace-nowrap" data-i18n="navCharacterHub">
+            Character Hub
           </button>
-          <button data-view="timeline" class="nav-tab-btn px-3.5 py-2 rounded-lg text-xs font-bold text-slate-300 hover:text-white hover:bg-white/5 transition-all flex items-center gap-2">
-            <i class="fa-solid fa-timeline text-purple-400"></i> Sacred Timeline
+          <button data-view="timeline" class="nav-tab-btn px-3.5 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition-all whitespace-nowrap" data-i18n="navTimeline">
+            Sacred Timeline
           </button>
-          <button data-view="watchlist" class="nav-tab-btn px-3.5 py-2 rounded-lg text-xs font-bold text-slate-300 hover:text-white hover:bg-white/5 transition-all flex items-center gap-2 relative">
-            <i class="fa-solid fa-bookmark text-emerald-400"></i> Watchlist
+          <button data-view="watchlist" class="nav-tab-btn px-3.5 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition-all whitespace-nowrap flex items-center gap-1.5 relative">
+            <span data-i18n="navWatchlist">Watchlist</span>
             <span id="navWatchlistBadge" class="bg-mcu-red text-white text-[10px] font-bold px-1.5 py-0.2 rounded-full hidden">0</span>
           </button>
         </nav>
 
-        <!-- Right Header Actions (Search & Auth) -->
-        <div class="flex items-center space-x-2 sm:space-x-3">
+        <!-- Right Header Actions (Search, Lang Toggle & Auth) -->
+        <div class="flex items-center space-x-1.5 sm:space-x-2.5">
           <!-- Global Search Input -->
-          <div class="relative hidden sm:block w-44 md:w-56">
+          <div class="relative hidden sm:block w-36 md:w-52">
             <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
             <input 
               type="text" 
               id="headerSearchInput" 
-              placeholder="Search MCU ( / )..." 
+              placeholder="Search MCU..." 
               class="w-full bg-[#131A2B]/90 text-xs text-white pl-8 pr-7 py-2 rounded-lg border border-slate-700/80 focus:outline-none focus:border-mcu-red focus:ring-1 focus:ring-mcu-red transition-all"
             >
             <button id="headerSearchClear" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white hidden text-xs">
@@ -117,12 +116,19 @@
             </button>
           </div>
 
+          <!-- Language Switcher Toggle (TH / EN) -->
+          <button id="langToggleBtn" class="flex items-center gap-1 px-3 py-1.5 rounded-lg border border-slate-700 bg-[#131A2B] hover:border-slate-500 text-xs font-semibold text-slate-200 transition-all cursor-pointer" title="สลับภาษา / Switch Language">
+            <span id="langCurrentLabel" class="text-mcu-red font-bold">TH</span>
+            <span class="text-slate-500 text-[10px]">|</span>
+            <span id="langAltLabel" class="text-slate-400 text-[11px]">EN</span>
+          </button>
+
           <!-- Auth Section: Guest vs Logged In -->
           <div id="authNavContainer" class="flex items-center space-x-2">
             <!-- Guest state button (shown when logged out) -->
-            <button id="navLoginBtn" class="bg-mcu-red hover:bg-mcu-redDark text-white px-3.5 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 shadow-md shadow-mcu-red/20 transition-all">
-              <i class="fa-solid fa-right-to-bracket text-[11px]"></i>
-              <span>Sign In / Register</span>
+            <button id="navLoginBtn" class="bg-mcu-red hover:bg-mcu-redDark text-white px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 shadow-md shadow-mcu-red/20 transition-all whitespace-nowrap">
+              <span class="hidden sm:inline" data-i18n="navSignIn">Sign In / Register</span>
+              <span class="sm:hidden" data-i18n="navSignInShort">Sign In</span>
             </button>
 
             <!-- Logged in state dropdown (shown when logged in) -->
@@ -156,23 +162,24 @@
         >
       </div>
       <div class="grid grid-cols-2 gap-2 text-xs font-semibold">
-        <button data-view="browse" class="mobile-nav-btn active p-2.5 rounded-lg bg-white/10 text-white text-left flex items-center gap-2">
-          <i class="fa-solid fa-film text-mcu-red"></i> All Titles
+        <button data-view="browse" class="mobile-nav-btn active p-2.5 rounded-lg bg-white/10 text-white text-left flex items-center justify-between">
+          <span data-i18n="navAllTitles">All Titles</span>
         </button>
-        <button data-view="sagas" class="mobile-nav-btn p-2.5 rounded-lg bg-slate-900/60 text-slate-300 hover:text-white text-left flex items-center gap-2">
-          <i class="fa-solid fa-layer-group text-mcu-gold"></i> Sagas & Phases
+        <button data-view="sagas" class="mobile-nav-btn p-2.5 rounded-lg bg-slate-900/60 text-slate-300 hover:text-white text-left flex items-center justify-between">
+          <span data-i18n="navSagas">Sagas & Phases</span>
         </button>
-        <button data-view="characters" class="mobile-nav-btn p-2.5 rounded-lg bg-slate-900/60 text-slate-300 hover:text-white text-left flex items-center gap-2">
-          <i class="fa-solid fa-mask text-mcu-cyan"></i> Character Hub
+        <button data-view="characters" class="mobile-nav-btn p-2.5 rounded-lg bg-slate-900/60 text-slate-300 hover:text-white text-left flex items-center justify-between">
+          <span data-i18n="navCharacterHub">Character Hub</span>
         </button>
-        <button data-view="timeline" class="mobile-nav-btn p-2.5 rounded-lg bg-slate-900/60 text-slate-300 hover:text-white text-left flex items-center gap-2">
-          <i class="fa-solid fa-timeline text-purple-400"></i> Sacred Timeline
+        <button data-view="timeline" class="mobile-nav-btn p-2.5 rounded-lg bg-slate-900/60 text-slate-300 hover:text-white text-left flex items-center justify-between">
+          <span data-i18n="navTimeline">Sacred Timeline</span>
         </button>
-        <button data-view="watchlist" class="mobile-nav-btn p-2.5 rounded-lg bg-slate-900/60 text-slate-300 hover:text-white text-left flex items-center gap-2">
-          <i class="fa-solid fa-bookmark text-emerald-400"></i> My Watchlist
+        <button data-view="watchlist" class="mobile-nav-btn p-2.5 rounded-lg bg-slate-900/60 text-slate-300 hover:text-white text-left flex items-center justify-between">
+          <span data-i18n="navWatchlist">My Watchlist</span>
         </button>
-        <button id="mobileReplayIntroBtn" class="p-2.5 rounded-lg bg-slate-900/60 text-slate-300 hover:text-white text-left flex items-center gap-2">
-          <i class="fa-solid fa-clapperboard text-mcu-red"></i> Replay Intro
+        <button id="mobileLangToggleBtn" class="p-2.5 rounded-lg bg-slate-900/60 text-slate-300 hover:text-white text-left flex items-center justify-between">
+          <span data-i18n="langSwitch">Language / ภาษา</span>
+          <span class="text-mcu-red font-bold text-xs" id="mobileLangCurrentLabel">TH</span>
         </button>
       </div>
     </div>
@@ -189,27 +196,35 @@
     <div id="viewBrowse" class="app-view">
       
       <!-- HERO SPOTLIGHT CAROUSEL -->
-      <section id="heroSpotlight" class="relative overflow-hidden min-h-[480px] sm:min-h-[560px] lg:min-h-[600px] flex items-center justify-center border-b border-slate-800">
+      <section id="heroSpotlight" class="relative group overflow-hidden min-h-[460px] sm:min-h-[520px] lg:min-h-[560px] flex items-center justify-center border-b border-slate-800">
         <div id="heroBackdropContainer" class="absolute inset-0 z-0 bg-cover bg-center transition-all duration-700">
           <img id="heroBackdropImg" src="assets/images/backdrops/avengers-endgame-2019.svg" alt="Featured Backdrop" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-t from-[#06080D] via-[#06080D]/75 to-transparent"></div>
           <div class="absolute inset-0 bg-gradient-to-r from-[#06080D] via-[#06080D]/85 to-transparent"></div>
         </div>
 
+        <!-- Carousel Slider Controls (Left & Right) -->
+        <button id="heroPrevBtn" aria-label="Previous Spotlight" class="absolute left-3 sm:left-6 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-black/90 border border-white/20 text-white flex items-center justify-center transition-all hover:scale-110 active:scale-95 shadow-xl cursor-pointer">
+          <i class="fa-solid fa-chevron-left text-xs sm:text-sm"></i>
+        </button>
+        <button id="heroNextBtn" aria-label="Next Spotlight" class="absolute right-3 sm:right-6 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-black/90 border border-white/20 text-white flex items-center justify-center transition-all hover:scale-110 active:scale-95 shadow-xl cursor-pointer">
+          <i class="fa-solid fa-chevron-right text-xs sm:text-sm"></i>
+        </button>
+
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 w-full">
-          <div class="max-w-2xl space-y-4">
+          <div id="heroSpotlightContent" class="max-w-2xl space-y-4 hero-content-fade">
             <div class="flex flex-wrap items-center gap-2 text-xs font-bold">
-              <span class="bg-mcu-red text-white px-2.5 py-0.5 rounded tracking-wider uppercase font-bebas text-sm">
-                ★ FEATURED SPOTLIGHT
+              <span id="heroFeaturedBadge" class="bg-mcu-red text-white px-2.5 py-0.5 rounded tracking-wider uppercase font-bebas text-xs" data-i18n="featuredSpotlight">
+                FEATURED SPOTLIGHT
               </span>
-              <span id="heroPhaseBadge" class="bg-amber-500/20 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded">
+              <span id="heroPhaseBadge" class="bg-amber-500/20 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded text-xs font-semibold">
                 Phase 3
               </span>
-              <span id="heroTypeBadge" class="bg-blue-500/20 text-blue-300 border border-blue-500/30 px-2 py-0.5 rounded uppercase">
+              <span id="heroTypeBadge" class="bg-blue-500/20 text-blue-300 border border-blue-500/30 px-2 py-0.5 rounded text-xs font-semibold uppercase">
                 Movie • 2019
               </span>
-              <span id="heroScoreBadge" class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded flex items-center gap-1 font-bold">
-                <i class="fa-solid fa-star text-xs text-amber-400"></i> ★ 5.0 / 5.0
+              <span id="heroScoreBadge" class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2.5 py-0.5 rounded text-xs font-bold">
+                5.0 / 5.0
               </span>
             </div>
 
@@ -227,14 +242,14 @@
             </p>
 
             <div class="flex flex-wrap items-center gap-3 pt-2">
-              <button id="heroTrailerBtn" class="bg-mcu-red hover:bg-mcu-redDark text-white px-5 py-2.5 rounded-lg text-xs font-bold flex items-center gap-2 shadow-lg shadow-mcu-red/30 hover:scale-105 active:scale-95 transition-all">
-                <i class="fa-solid fa-play"></i> Watch Trailer
+              <button id="heroTrailerBtn" class="bg-mcu-red hover:bg-mcu-redDark text-white px-5 py-2.5 rounded-lg text-xs font-bold flex items-center gap-2 shadow-lg shadow-mcu-red/30 hover:scale-105 active:scale-95 transition-all cursor-pointer">
+                <span data-i18n="watchTrailer">Watch Trailer</span>
               </button>
-              <button id="heroDetailBtn" class="glass-panel hover:bg-white/10 text-white border border-slate-600 px-5 py-2.5 rounded-lg text-xs font-semibold flex items-center gap-2 hover:border-slate-400 transition-all">
-                <i class="fa-solid fa-circle-info text-mcu-cyan"></i> View Details & Reviews
+              <button id="heroDetailBtn" class="glass-panel hover:bg-white/10 text-white border border-slate-600 px-5 py-2.5 rounded-lg text-xs font-semibold flex items-center gap-2 hover:border-slate-400 transition-all cursor-pointer">
+                <span data-i18n="viewDetails">Details & Reviews</span>
               </button>
-              <button id="heroWatchlistBtn" class="glass-panel hover:bg-white/10 text-slate-200 border border-slate-700 px-4 py-2.5 rounded-lg text-xs font-medium flex items-center gap-2 hover:text-white transition-all">
-                <i class="fa-regular fa-bookmark"></i> <span id="heroWatchlistBtnText">Add to Watchlist</span>
+              <button id="heroWatchlistBtn" class="glass-panel hover:bg-white/10 text-slate-200 border border-slate-700 px-4 py-2.5 rounded-lg text-xs font-medium flex items-center gap-2 hover:text-white transition-all cursor-pointer">
+                <span id="heroWatchlistBtnText" data-i18n="addToWatchlist">Add to Watchlist</span>
               </button>
             </div>
 
@@ -244,76 +259,93 @@
       </section>
 
       <!-- CHARACTER HUB: HERO QUICK-FILTER STRIP -->
-      <section class="border-b border-slate-800 bg-[#080B12] py-4 px-4 sm:px-6 lg:px-8">
+      <section class="border-b border-slate-800 bg-[#080B12] py-3.5 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto space-y-2">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-extrabold uppercase tracking-widest text-mcu-cyan flex items-center gap-2">
-              <i class="fa-solid fa-mask"></i> Character Hub: Filter by Marvel Hero
+            <span id="heroFilterTitle" class="text-xs font-bold uppercase tracking-wider text-slate-300" data-i18n="characterHubHeading">
+              Filter by Marvel Hero
             </span>
-            <span class="text-[11px] text-slate-400">Shows standalone + crossover movies</span>
+            <span class="text-[11px] text-slate-400" data-i18n="characterHubSubtitle">Standalone & crossover appearances</span>
           </div>
 
           <!-- Horizontal Hero Selector Buttons -->
-          <div class="flex items-center gap-2 overflow-x-auto pb-1 pt-1" id="heroFilterStripContainer">
-            <!-- Dynamically populated hero filter buttons -->
+          <div class="flex items-center gap-2 overflow-x-auto pb-1 pt-1 scrollbar-none" id="heroFilterStripContainer">
+            <!-- Dynamically populated clean hero filter buttons -->
           </div>
         </div>
       </section>
 
       <!-- FILTER & SORT CONTROLS BAR -->
-      <section class="sticky top-20 z-30 glass-nav border-b border-slate-800/80 py-3.5 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3">
+      <section class="sticky top-20 z-30 glass-nav border-b border-slate-800/80 py-3 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-2.5 sm:gap-3">
           
           <!-- Filters Group -->
-          <div class="flex flex-wrap items-center gap-2 sm:gap-3 flex-grow">
+          <div class="flex flex-wrap items-center gap-2 sm:gap-3 flex-grow overflow-x-auto scrollbar-none pb-1 lg:pb-0">
             <!-- Search bar -->
-            <div class="relative flex-grow sm:flex-grow-0 sm:w-60">
+            <div class="relative w-full sm:w-56 md:w-60 flex-shrink-0">
               <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
               <input 
                 type="text" 
                 id="catalogSearchInput" 
-                placeholder="Search titles, actors, directors..." 
+                placeholder="Search titles, cast, heroes..." 
                 class="w-full bg-[#131A2B] text-xs text-white pl-8 pr-7 py-2 rounded-lg border border-slate-700 focus:outline-none focus:border-mcu-red transition-all"
+                data-i18n-ph="catalogSearchPh"
               >
               <button id="catalogSearchClear" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white hidden text-xs">
                 <i class="fa-solid fa-xmark"></i>
               </button>
             </div>
 
-            <!-- Saga Filter Tabs -->
-            <div class="flex items-center bg-[#131A2B] p-1 rounded-lg border border-slate-700 text-xs font-semibold" id="sagaFilterGroup">
-              <button data-saga="all" class="saga-filter-btn active px-3 py-1 rounded bg-mcu-red text-white transition-all">All Sagas</button>
-              <button data-saga="The Infinity Saga" class="saga-filter-btn px-3 py-1 rounded text-slate-300 hover:text-white transition-all">Infinity Saga (Phases 1–3)</button>
-              <button data-saga="The Multiverse Saga" class="saga-filter-btn px-3 py-1 rounded text-slate-300 hover:text-white transition-all">Multiverse Saga (Phases 4–6)</button>
+            <!-- Saga / Universe Filter Tabs -->
+            <div class="flex items-center bg-[#131A2B] p-1 rounded-lg border border-slate-700 text-xs font-semibold flex-shrink-0 overflow-x-auto scrollbar-none" id="sagaFilterGroup">
+              <button data-saga="all" class="saga-filter-btn active px-2.5 sm:px-3 py-1 rounded bg-mcu-red text-white transition-all text-[11px] sm:text-xs whitespace-nowrap" data-i18n="sagaAll">All Marvel</button>
+              <button data-saga="The Infinity Saga" class="saga-filter-btn px-2.5 sm:px-3 py-1 rounded text-slate-300 hover:text-white transition-all text-[11px] sm:text-xs whitespace-nowrap" data-i18n="sagaInfinity">
+                Infinity Saga
+              </button>
+              <button data-saga="The Multiverse Saga" class="saga-filter-btn px-2.5 sm:px-3 py-1 rounded text-slate-300 hover:text-white transition-all text-[11px] sm:text-xs whitespace-nowrap" data-i18n="sagaMultiverse">
+                Multiverse Saga
+              </button>
+              <button data-saga="Spider-Man Legacy" class="saga-filter-btn px-2.5 sm:px-3 py-1 rounded text-slate-300 hover:text-white transition-all text-[11px] sm:text-xs whitespace-nowrap" data-i18n="sagaSpiderman">
+                Spider-Man Legacy
+              </button>
+              <button data-saga="X-Men & Mutants (Fox)" class="saga-filter-btn px-2.5 sm:px-3 py-1 rounded text-slate-300 hover:text-white transition-all text-[11px] sm:text-xs whitespace-nowrap" data-i18n="sagaXMen">
+                Fox X-Men
+              </button>
+              <button data-saga="Sony Universe & Venom" class="saga-filter-btn px-2.5 sm:px-3 py-1 rounded text-slate-300 hover:text-white transition-all text-[11px] sm:text-xs whitespace-nowrap" data-i18n="sagaSony">
+                Sony Universe
+              </button>
+              <button data-saga="Marvel Classics (Ghost Rider & Blade)" class="saga-filter-btn px-2.5 sm:px-3 py-1 rounded text-slate-300 hover:text-white transition-all text-[11px] sm:text-xs whitespace-nowrap" data-i18n="sagaClassics">
+                Marvel Classics
+              </button>
             </div>
 
             <!-- Media Type Filter -->
-            <div class="flex items-center bg-[#131A2B] p-1 rounded-lg border border-slate-700 text-xs font-semibold" id="mediaTypeFilterGroup">
-              <button data-type="all" class="type-filter-btn active px-3 py-1 rounded bg-mcu-red text-white transition-all">All</button>
-              <button data-type="movie" class="type-filter-btn px-3 py-1 rounded text-slate-300 hover:text-white transition-all">Movies</button>
-              <button data-type="series" class="type-filter-btn px-3 py-1 rounded text-slate-300 hover:text-white transition-all">Disney+ Series</button>
+            <div class="flex items-center bg-[#131A2B] p-1 rounded-lg border border-slate-700 text-xs font-semibold flex-shrink-0" id="mediaTypeFilterGroup">
+              <button data-type="all" class="type-filter-btn active px-2.5 sm:px-3 py-1 rounded bg-mcu-red text-white transition-all text-[11px] sm:text-xs" data-i18n="typeAll">All</button>
+              <button data-type="movie" class="type-filter-btn px-2.5 sm:px-3 py-1 rounded text-slate-300 hover:text-white transition-all text-[11px] sm:text-xs" data-i18n="typeMovies">Movies</button>
+              <button data-type="series" class="type-filter-btn px-2.5 sm:px-3 py-1 rounded text-slate-300 hover:text-white transition-all text-[11px] sm:text-xs" data-i18n="typeSeries">Series</button>
             </div>
           </div>
 
           <!-- Order & Sort Controls -->
-          <div class="flex items-center justify-between lg:justify-end gap-2.5">
+          <div class="flex flex-wrap sm:flex-nowrap items-center justify-between lg:justify-end gap-2 flex-shrink-0 pt-1 lg:pt-0">
             <!-- Timeline / Release Order Toggle -->
             <div class="flex items-center bg-[#131A2B] p-1 rounded-lg border border-slate-700 text-xs font-semibold" id="orderToggleGroup">
-              <button id="orderReleaseBtn" class="order-toggle-btn active px-3 py-1 rounded bg-white/15 text-white transition-all flex items-center gap-1.5" title="Sort by theatrical release date">
-                <i class="fa-solid fa-calendar-days text-mcu-gold"></i> Release Order
+              <button id="orderReleaseBtn" class="order-toggle-btn active px-3 py-1.5 rounded bg-white/15 text-white transition-all text-[11px] sm:text-xs" title="Sort by theatrical release date">
+                <span data-i18n="btnReleaseOrder">Release Order</span>
               </button>
-              <button id="orderChronoBtn" class="order-toggle-btn px-3 py-1 rounded text-slate-400 hover:text-white transition-all flex items-center gap-1.5" title="Sort by in-universe timeline order">
-                <i class="fa-solid fa-hourglass-start text-mcu-cyan"></i> Chronological
+              <button id="orderChronoBtn" class="order-toggle-btn px-3 py-1.5 rounded text-slate-400 hover:text-white transition-all text-[11px] sm:text-xs" title="Sort by in-universe timeline order">
+                <span data-i18n="btnChronoOrder">Chronological</span>
               </button>
             </div>
 
             <!-- Sort By Select -->
-            <select id="sortSelect" class="bg-[#131A2B] text-xs text-slate-200 border border-slate-700 px-2.5 py-1.5 rounded-lg focus:outline-none focus:border-mcu-red cursor-pointer font-medium">
-              <option value="rating_desc">Highest Rated ★</option>
-              <option value="year_desc">Year (Newest)</option>
-              <option value="year_asc">Year (Oldest)</option>
-              <option value="boxoffice_desc">Box Office 💰</option>
-              <option value="title_asc">Title (A – Z)</option>
+            <select id="sortSelect" class="bg-[#131A2B] text-xs text-slate-200 border border-slate-700 px-3 py-1.5 rounded-lg focus:outline-none focus:border-mcu-red cursor-pointer font-medium flex-grow sm:flex-grow-0">
+              <option value="release_asc" data-i18n="sortReleaseAsc">Release Date (Oldest First)</option>
+              <option value="release_desc" data-i18n="sortReleaseDesc">Release Date (Newest First)</option>
+              <option value="rating_desc" data-i18n="sortRatingDesc">Highest Rated</option>
+              <option value="boxoffice_desc" data-i18n="sortBoxOfficeDesc">Box Office Earnings</option>
+              <option value="title_asc" data-i18n="sortTitleAsc">Title (A – Z)</option>
             </select>
 
             <!-- Reset Filter Button -->
@@ -375,32 +407,88 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-        <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-amber-500/30 relative overflow-hidden group cursor-pointer saga-shortcut-card" data-saga="The Infinity Saga">
-          <span class="text-xs font-bold tracking-widest uppercase text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded border border-amber-500/30">
-            Phases 1 — 3 • 2008 to 2019
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div class="glass-panel p-6 rounded-2xl border border-amber-500/30 relative overflow-hidden group cursor-pointer saga-shortcut-card hover:border-amber-500/60 transition-all" data-saga="The Infinity Saga">
+          <span class="text-[10px] font-bold tracking-widest uppercase text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded border border-amber-500/30">
+            MCU Phases 1 — 3 • 2008 – 2019
           </span>
-          <h3 class="font-bebas text-3xl sm:text-4xl tracking-wider text-white mt-3">The Infinity Saga</h3>
-          <p class="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed">
-            From Tony Stark's cave escape through the Battle of New York and the devastating culmination of the Infinity Gauntlet and Avengers: Endgame.
+          <h3 class="font-bebas text-2xl sm:text-3xl tracking-wider text-white mt-3">The Infinity Saga</h3>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            From Tony Stark's cave escape through the Battle of New York to the Thanos snap and Avengers: Endgame.
           </p>
-          <div class="mt-4 pt-4 border-t border-slate-800 flex items-center justify-between text-xs font-semibold text-slate-400">
+          <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-semibold text-slate-400">
             <span>23 Feature Films</span>
-            <span class="text-amber-400 font-bold">Filter This Saga →</span>
+            <span class="text-amber-400 font-bold">Filter Saga →</span>
           </div>
         </div>
 
-        <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-purple-500/30 relative overflow-hidden group cursor-pointer saga-shortcut-card" data-saga="The Multiverse Saga">
-          <span class="text-xs font-bold tracking-widest uppercase text-purple-400 bg-purple-500/10 px-2.5 py-1 rounded border border-purple-500/30">
-            Phases 4 — 6 • 2021 to Present
+        <div class="glass-panel p-6 rounded-2xl border border-purple-500/30 relative overflow-hidden group cursor-pointer saga-shortcut-card hover:border-purple-500/60 transition-all" data-saga="The Multiverse Saga">
+          <span class="text-[10px] font-bold tracking-widest uppercase text-purple-400 bg-purple-500/10 px-2.5 py-1 rounded border border-purple-500/30">
+            MCU Phases 4 — 5 • 2021 – Present
           </span>
-          <h3 class="font-bebas text-3xl sm:text-4xl tracking-wider text-white mt-3">The Multiverse Saga</h3>
-          <p class="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed">
-            Expanding into streaming, alternate realities, TVA branches, mutant crossovers, and multiversal incursions leading toward Avengers: Doomsday.
+          <h3 class="font-bebas text-2xl sm:text-3xl tracking-wider text-white mt-3">The Multiverse Saga</h3>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            Expanding into Disney+ series, alternate realities, TVA branches, and Deadpool & Wolverine uniting the multiverse.
           </p>
-          <div class="mt-4 pt-4 border-t border-slate-800 flex items-center justify-between text-xs font-semibold text-slate-400">
-            <span>Movies & Disney+ Shows</span>
-            <span class="text-purple-400 font-bold">Filter This Saga →</span>
+          <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-semibold text-slate-400">
+            <span>24 Movies & Series</span>
+            <span class="text-purple-400 font-bold">Filter Saga →</span>
+          </div>
+        </div>
+
+        <div class="glass-panel p-6 rounded-2xl border border-red-500/30 relative overflow-hidden group cursor-pointer saga-shortcut-card hover:border-red-500/60 transition-all" data-saga="Spider-Man Legacy">
+          <span class="text-[10px] font-bold tracking-widest uppercase text-red-400 bg-red-500/10 px-2.5 py-1 rounded border border-red-500/30">
+            Tobey & Andrew • 2002 – 2014
+          </span>
+          <h3 class="font-bebas text-2xl sm:text-3xl tracking-wider text-white mt-3">Spider-Man Legacy</h3>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            Sam Raimi's legendary trilogy starring Tobey Maguire and Marc Webb's The Amazing Spider-Man starring Andrew Garfield.
+          </p>
+          <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-semibold text-slate-400">
+            <span>5 Spider-Man Films</span>
+            <span class="text-red-400 font-bold">Filter Saga →</span>
+          </div>
+        </div>
+
+        <div class="glass-panel p-6 rounded-2xl border border-cyan-500/30 relative overflow-hidden group cursor-pointer saga-shortcut-card hover:border-cyan-500/60 transition-all" data-saga="X-Men & Mutants (Fox)">
+          <span class="text-[10px] font-bold tracking-widest uppercase text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded border border-cyan-500/30">
+            Earth-10005 • 2000 – 2020
+          </span>
+          <h3 class="font-bebas text-2xl sm:text-3xl tracking-wider text-white mt-3">Fox X-Men & Mutants</h3>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            Hugh Jackman's Wolverine, Patrick Stewart's Xavier, Ian McKellen's Magneto, Days of Future Past, Logan, and Deadpool.
+          </p>
+          <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-semibold text-slate-400">
+            <span>13 Mutant Films</span>
+            <span class="text-cyan-400 font-bold">Filter Saga →</span>
+          </div>
+        </div>
+
+        <div class="glass-panel p-6 rounded-2xl border border-slate-500/30 relative overflow-hidden group cursor-pointer saga-shortcut-card hover:border-slate-500/60 transition-all" data-saga="Sony Universe & Venom">
+          <span class="text-[10px] font-bold tracking-widest uppercase text-slate-300 bg-slate-700/30 px-2.5 py-1 rounded border border-slate-600/30">
+            SSU • 2018 – 2024
+          </span>
+          <h3 class="font-bebas text-2xl sm:text-3xl tracking-wider text-white mt-3">Sony Universe & Venom</h3>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            Tom Hardy as Eddie Brock / Venom, Carnage, Morbius, Madame Web, and the cosmic threat of Knull.
+          </p>
+          <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-semibold text-slate-400">
+            <span>5 Anti-Hero Films</span>
+            <span class="text-slate-300 font-bold">Filter Saga →</span>
+          </div>
+        </div>
+
+        <div class="glass-panel p-6 rounded-2xl border border-orange-500/30 relative overflow-hidden group cursor-pointer saga-shortcut-card hover:border-orange-500/60 transition-all" data-saga="Marvel Classics (Ghost Rider & Blade)">
+          <span class="text-[10px] font-bold tracking-widest uppercase text-orange-400 bg-orange-500/10 px-2.5 py-1 rounded border border-orange-500/30">
+            Marvel Knights • 1998 – 2011
+          </span>
+          <h3 class="font-bebas text-2xl sm:text-3xl tracking-wider text-white mt-3">Marvel Classics & Knights</h3>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            Nicolas Cage's Ghost Rider, Wesley Snipes' Blade trilogy, Daredevil 2003, and the original Fantastic Four.
+          </p>
+          <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-semibold text-slate-400">
+            <span>8 Classic Films</span>
+            <span class="text-orange-400 font-bold">Filter Saga →</span>
           </div>
         </div>
       </div>
@@ -444,16 +532,26 @@
           THE MARVEL CINEMATIC TIMELINE
         </h2>
         <p class="text-sm text-slate-300">
-          Trace the grand MCU narrative in in-universe chronological order (1942 to 2026) or theatrical release order.
+          Trace the grand MCU narrative in in-universe chronological order (1942 to 2026), release order, or filter by specific Marvel universe!
         </p>
 
-        <div class="inline-flex bg-[#131A2B] p-1 rounded-xl border border-slate-700 text-xs font-semibold mt-4">
-          <button id="timelineModeChronoBtn" class="px-5 py-2 rounded-lg bg-mcu-red text-white transition-all flex items-center gap-2">
-            <i class="fa-solid fa-hourglass-start"></i> Chronological Story Order (1942 → 2026)
+        <div class="inline-flex flex-col sm:flex-row bg-[#131A2B] p-1 rounded-xl border border-slate-700 text-xs font-semibold mt-4 w-full sm:w-auto">
+          <button id="timelineModeChronoBtn" class="px-3 sm:px-5 py-2 rounded-lg bg-mcu-red text-white transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-hourglass-start"></i> <span>Chronological <span class="hidden sm:inline">Story Order</span></span>
           </button>
-          <button id="timelineModeReleaseBtn" class="px-5 py-2 rounded-lg text-slate-300 hover:text-white transition-all flex items-center gap-2">
-            <i class="fa-solid fa-calendar-days"></i> Theatrical Release Order (2008 → 2024)
+          <button id="timelineModeReleaseBtn" class="px-3 sm:px-5 py-2 rounded-lg text-slate-300 hover:text-white transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-calendar-days"></i> <span>Release Order <span class="hidden sm:inline">(1998 → 2024)</span></span>
           </button>
+        </div>
+
+        <!-- Universe Filter Tabs for Timeline -->
+        <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mt-4" id="timelineUniverseFilterGroup">
+          <button data-univ="all" class="timeline-univ-btn active px-3 py-1 rounded-full text-xs font-bold bg-mcu-red text-white transition-all">All Marvel (78)</button>
+          <button data-univ="MCU (Sacred Timeline)" class="timeline-univ-btn px-3 py-1 rounded-full text-xs font-semibold bg-[#131A2B] text-slate-300 hover:text-white border border-slate-700 transition-all">MCU Sacred Timeline (47)</button>
+          <button data-univ="Spider-Man Legacy" class="timeline-univ-btn px-3 py-1 rounded-full text-xs font-semibold bg-[#131A2B] text-slate-300 hover:text-white border border-slate-700 transition-all">Spider-Man Legacy</button>
+          <button data-univ="Fox X-Men Universe" class="timeline-univ-btn px-3 py-1 rounded-full text-xs font-semibold bg-[#131A2B] text-slate-300 hover:text-white border border-slate-700 transition-all">Fox X-Men</button>
+          <button data-univ="Sony Spider-Man Universe" class="timeline-univ-btn px-3 py-1 rounded-full text-xs font-semibold bg-[#131A2B] text-slate-300 hover:text-white border border-slate-700 transition-all">Sony Universe & Venom</button>
+          <button data-univ="Marvel Legacy Classics" class="timeline-univ-btn px-3 py-1 rounded-full text-xs font-semibold bg-[#131A2B] text-slate-300 hover:text-white border border-slate-700 transition-all">Marvel Classics</button>
         </div>
       </div>
 
@@ -480,18 +578,18 @@
             </p>
           </div>
 
-          <div class="grid grid-cols-3 gap-4 w-full md:w-auto text-center">
-            <div class="bg-[#0A0D15] p-3 rounded-xl border border-slate-800 min-w-[90px]">
+          <div class="grid grid-cols-3 gap-2 sm:gap-4 w-full md:w-auto text-center">
+            <div class="bg-[#0A0D15] p-2.5 sm:p-3 rounded-xl border border-slate-800 min-w-0">
               <div id="watchlistTotalCount" class="font-bebas text-2xl sm:text-3xl text-white">0</div>
-              <div class="text-[10px] uppercase font-bold text-slate-400">Total Saved</div>
+              <div class="text-[9px] sm:text-[10px] uppercase font-bold text-slate-400 truncate">Saved</div>
             </div>
-            <div class="bg-[#0A0D15] p-3 rounded-xl border border-slate-800 min-w-[90px]">
+            <div class="bg-[#0A0D15] p-2.5 sm:p-3 rounded-xl border border-slate-800 min-w-0">
               <div id="watchlistCompletedCount" class="font-bebas text-2xl sm:text-3xl text-emerald-400">0</div>
-              <div class="text-[10px] uppercase font-bold text-slate-400">Completed</div>
+              <div class="text-[9px] sm:text-[10px] uppercase font-bold text-slate-400 truncate">Done</div>
             </div>
-            <div class="bg-[#0A0D15] p-3 rounded-xl border border-slate-800 min-w-[90px]">
+            <div class="bg-[#0A0D15] p-2.5 sm:p-3 rounded-xl border border-slate-800 min-w-0">
               <div id="watchlistPlanCount" class="font-bebas text-2xl sm:text-3xl text-amber-400">0</div>
-              <div class="text-[10px] uppercase font-bold text-slate-400">To Watch</div>
+              <div class="text-[9px] sm:text-[10px] uppercase font-bold text-slate-400 truncate">Plan</div>
             </div>
           </div>
         </div>
@@ -507,17 +605,17 @@
         </div>
       </div>
 
-      <div class="flex items-center space-x-2 border-b border-slate-800 pb-3 mb-6">
-        <button data-status="all" class="watchlist-filter-btn active px-4 py-1.5 rounded-lg text-xs font-bold bg-white/10 text-white">
+      <div class="flex items-center space-x-2 border-b border-slate-800 pb-3 mb-6 overflow-x-auto scrollbar-none flex-nowrap">
+        <button data-status="all" class="watchlist-filter-btn active px-3.5 py-1.5 rounded-lg text-xs font-bold bg-white/10 text-white whitespace-nowrap flex-shrink-0">
           All Saved (<span id="tabCountAll">0</span>)
         </button>
-        <button data-status="want_to_watch" class="watchlist-filter-btn px-4 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white">
+        <button data-status="want_to_watch" class="watchlist-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white whitespace-nowrap flex-shrink-0">
           Want to Watch (<span id="tabCountWant">0</span>)
         </button>
-        <button data-status="watching" class="watchlist-filter-btn px-4 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white">
-          Currently Watching (<span id="tabCountWatching">0</span>)
+        <button data-status="watching" class="watchlist-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white whitespace-nowrap flex-shrink-0">
+          Watching (<span id="tabCountWatching">0</span>)
         </button>
-        <button data-status="completed" class="watchlist-filter-btn px-4 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white">
+        <button data-status="completed" class="watchlist-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white whitespace-nowrap flex-shrink-0">
           Completed (<span id="tabCountCompleted">0</span>)
         </button>
       </div>
@@ -555,9 +653,7 @@
       </div>
 
       <div class="flex flex-wrap items-center justify-center gap-3">
-        <button id="footerReplayIntroBtn" class="bg-[#131A2B] hover:bg-[#1A243D] text-white px-3 py-1.5 rounded-lg text-xs font-semibold border border-slate-700 flex items-center gap-1.5 transition-all">
-          <i class="fa-solid fa-clapperboard text-mcu-red"></i> Replay Marvel Intro
-        </button>
+        <span class="text-slate-600 text-[11px]">Phase 1 → Phase 6 Complete Timeline</span>
       </div>
     </div>
   </footer>
@@ -577,33 +673,33 @@
       </button>
 
       <!-- Dynamic Backdrop Header with Theme Gradient -->
-      <div class="relative h-56 sm:h-72 w-full overflow-hidden bg-slate-900">
+      <div class="relative h-48 sm:h-64 md:h-72 w-full overflow-hidden bg-slate-900">
         <img id="detailBackdropImg" src="" alt="" class="w-full h-full object-cover">
         <div id="detailBackdropGradient" class="absolute inset-0"></div>
         
-        <button id="detailTrailerPlayBtn" class="absolute bottom-5 right-6 bg-mcu-red hover:bg-mcu-redDark text-white px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-2 shadow-lg shadow-mcu-red/40 hover:scale-105 active:scale-95 transition-all">
+        <button id="detailTrailerPlayBtn" class="absolute bottom-3 right-3 sm:bottom-5 sm:right-6 bg-mcu-red hover:bg-mcu-redDark text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-xs font-bold flex items-center gap-1.5 sm:gap-2 shadow-lg shadow-mcu-red/40 hover:scale-105 active:scale-95 transition-all">
           <i class="fa-solid fa-play"></i> Watch Trailer
         </button>
       </div>
 
       <!-- Content Grid -->
-      <div class="p-6 sm:p-8 space-y-8 -mt-16 sm:-mt-20 relative z-10">
+      <div class="p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8 -mt-14 sm:-mt-20 relative z-10">
         
         <!-- Top Summary Row -->
-        <div class="flex flex-col sm:flex-row gap-6 items-start">
-          <div class="w-32 sm:w-44 flex-shrink-0 rounded-xl overflow-hidden shadow-2xl border-2 border-slate-700 bg-slate-900">
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center sm:items-start text-center sm:text-left">
+          <div class="w-28 sm:w-40 md:w-44 flex-shrink-0 rounded-xl overflow-hidden shadow-2xl border-2 border-slate-700 bg-slate-900 mx-auto sm:mx-0">
             <img id="detailPosterImg" src="" alt="" class="w-full h-auto aspect-[2/3] object-cover">
           </div>
 
-          <div class="flex-grow space-y-2.5 pt-2 sm:pt-14">
-            <div class="flex flex-wrap items-center gap-2 text-xs font-bold">
+          <div class="flex-grow space-y-2.5 pt-1 sm:pt-14 w-full">
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-1.5 sm:gap-2 text-xs font-bold">
               <span id="detailPhaseBadge" class="px-2.5 py-0.5 rounded">Phase 1</span>
               <span id="detailTypeBadge" class="bg-blue-500/20 text-blue-300 border border-blue-500/30 px-2.5 py-0.5 rounded uppercase">Movie</span>
               <span id="detailYearBadge" class="bg-slate-800 text-slate-300 px-2.5 py-0.5 rounded">2008</span>
               <span id="detailRatingBadge" class="bg-slate-800 text-slate-300 px-2 py-0.5 rounded">PG-13</span>
             </div>
 
-            <h2 id="detailTitle" class="font-bebas text-3xl sm:text-4xl text-white tracking-wide">
+            <h2 id="detailTitle" class="font-bebas text-2xl sm:text-3xl md:text-4xl text-white tracking-wide">
               Movie Title
             </h2>
             <p id="detailTagline" class="text-xs sm:text-sm text-mcu-gold font-semibold italic">
@@ -611,19 +707,19 @@
             </p>
 
             <!-- 5-Star Average Score Breakdown -->
-            <div class="flex flex-wrap items-center gap-3 pt-1">
-              <div class="flex items-center gap-1.5 bg-black/40 px-3 py-1.5 rounded-lg border border-white/10 text-xs font-bold">
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 pt-1">
+              <div class="flex items-center gap-1.5 bg-black/40 px-2.5 sm:px-3 py-1.5 rounded-lg border border-white/10 text-xs font-bold">
                 <i class="fa-solid fa-star text-amber-400"></i>
                 <span id="detailScore" class="text-white">★ 4.8</span>
                 <span class="text-slate-400 font-normal">/ 5.0</span>
                 <span id="detailReviewsCountBadge" class="text-slate-400 font-normal text-[11px] ml-1">(2 reviews)</span>
               </div>
-              <div class="flex items-center gap-1.5 bg-black/40 px-3 py-1.5 rounded-lg border border-white/10 text-xs font-bold">
+              <div class="flex items-center gap-1.5 bg-black/40 px-2.5 sm:px-3 py-1.5 rounded-lg border border-white/10 text-xs font-bold">
                 <i class="fa-solid fa-apple-whole text-red-400"></i>
                 <span id="detailCriticScore" class="text-white">90%</span>
                 <span class="text-slate-400 font-normal">Critics</span>
               </div>
-              <div class="flex items-center gap-1.5 bg-black/40 px-3 py-1.5 rounded-lg border border-white/10 text-xs font-bold">
+              <div class="flex items-center gap-1.5 bg-black/40 px-2.5 sm:px-3 py-1.5 rounded-lg border border-white/10 text-xs font-bold">
                 <i class="fa-solid fa-popcorn text-yellow-400"></i>
                 <span id="detailAudienceScore" class="text-white">92%</span>
                 <span class="text-slate-400 font-normal">Audience</span>
@@ -631,7 +727,7 @@
             </div>
 
             <!-- Watchlist Button -->
-            <div class="pt-2">
+            <div class="pt-2 flex justify-center sm:justify-start">
               <button id="detailWatchlistToggleBtn" class="bg-black/50 hover:bg-black/70 text-white border border-white/20 px-4 py-2 rounded-lg text-xs font-semibold flex items-center gap-2 transition-all">
                 <i class="fa-regular fa-bookmark"></i>
                 <span id="detailWatchlistStatusText">Add to Watchlist</span>
@@ -641,40 +737,40 @@
         </div>
 
         <!-- Synopsis & Technical Details -->
-        <div class="space-y-4 pt-2">
-          <h4 class="font-bebas text-xl text-white tracking-wider border-b border-white/10 pb-2">
+        <div class="space-y-4 pt-2 text-left">
+          <h4 class="font-bebas text-xl text-white tracking-wider border-b border-white/10 pb-2" data-i18n="synopsisOverview">
             Synopsis & Overview
           </h4>
-          <p id="detailSynopsis" class="text-sm text-slate-200 leading-relaxed">
+          <p id="detailSynopsis" class="text-xs sm:text-sm text-slate-200 leading-relaxed">
             Movie synopsis text...
           </p>
 
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs pt-2">
-            <div class="bg-black/40 p-3 rounded-lg border border-white/10">
-              <span class="text-slate-400 uppercase font-semibold block text-[10px]">Director</span>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 text-xs pt-2">
+            <div class="bg-black/40 p-2.5 sm:p-3 rounded-lg border border-white/10">
+              <span class="text-slate-400 uppercase font-semibold block text-[10px]" data-i18n="director">Director</span>
               <strong id="detailDirector" class="text-white mt-0.5 block truncate">Jon Favreau</strong>
             </div>
-            <div class="bg-black/40 p-3 rounded-lg border border-white/10">
-              <span class="text-slate-400 uppercase font-semibold block text-[10px]">Box Office</span>
+            <div class="bg-black/40 p-2.5 sm:p-3 rounded-lg border border-white/10">
+              <span class="text-slate-400 uppercase font-semibold block text-[10px]" data-i18n="boxOffice">Box Office</span>
               <strong id="detailBoxOffice" class="text-emerald-400 mt-0.5 block truncate">$585M</strong>
             </div>
-            <div class="bg-black/40 p-3 rounded-lg border border-white/10">
-              <span class="text-slate-400 uppercase font-semibold block text-[10px]">Duration / Episodes</span>
+            <div class="bg-black/40 p-2.5 sm:p-3 rounded-lg border border-white/10">
+              <span class="text-slate-400 uppercase font-semibold block text-[10px]" data-i18n="runtime">Duration / Episodes</span>
               <strong id="detailRuntime" class="text-white mt-0.5 block truncate">2h 6m</strong>
             </div>
-            <div class="bg-black/40 p-3 rounded-lg border border-white/10">
-              <span class="text-slate-400 uppercase font-semibold block text-[10px]">Active Heroes</span>
+            <div class="bg-black/40 p-2.5 sm:p-3 rounded-lg border border-white/10">
+              <span class="text-slate-400 uppercase font-semibold block text-[10px]" data-i18n="activeHeroes">Active Heroes</span>
               <strong id="detailActiveHeroes" class="text-mcu-gold mt-0.5 block truncate">Iron Man</strong>
             </div>
           </div>
         </div>
 
         <!-- Cast & Characters List -->
-        <div class="space-y-3">
-          <h4 class="font-bebas text-xl text-white tracking-wider border-b border-white/10 pb-2">
+        <div class="space-y-3 text-left">
+          <h4 class="font-bebas text-xl text-white tracking-wider border-b border-white/10 pb-2" data-i18n="featuredCast">
             Featured Heroes & Cast
           </h4>
-          <div id="detailCastContainer" class="flex gap-3 overflow-x-auto pb-3 pt-1">
+          <div id="detailCastContainer" class="flex gap-2.5 sm:gap-3 overflow-x-auto pb-3 pt-1 scrollbar-none">
             <!-- Dynamically injected cast cards -->
           </div>
         </div>
@@ -685,7 +781,7 @@
         <div class="space-y-6 pt-4 border-t border-white/10">
           <div class="flex items-center justify-between">
             <h4 class="font-bebas text-2xl text-white tracking-wider flex items-center gap-2">
-              <i class="fa-solid fa-comments text-mcu-red"></i> User Reviews & Ratings
+              <i class="fa-solid fa-comments text-mcu-red"></i> <span data-i18n="userReviews">User Reviews & Ratings</span>
             </h4>
             <span id="detailReviewsCount" class="text-xs text-slate-300">2 Reviews</span>
           </div>
@@ -694,7 +790,7 @@
           <div class="bg-black/40 p-5 rounded-xl border border-white/10 space-y-4">
             <div class="flex items-center justify-between border-b border-white/10 pb-3">
               <span class="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                <i class="fa-solid fa-pen-nib text-mcu-gold"></i> Write a Review
+                <i class="fa-solid fa-pen-nib text-mcu-gold"></i> <span data-i18n="writeReview">Write a Review</span>
               </span>
               <span class="text-[11px] text-slate-300" id="reviewAuthorStatusDisplay">
                 Posting as: <strong id="reviewFormAuthorName" class="text-white">Guest</strong>
@@ -852,7 +948,7 @@
         <!-- Quick Demo Accounts -->
         <div class="pt-3 border-t border-slate-800">
           <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-2">Or Quick Sign In with Demo Account:</span>
-          <div class="grid grid-cols-3 gap-2" id="demoAccountsContainer">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2" id="demoAccountsContainer">
             <!-- Dynamically injected demo accounts -->
           </div>
         </div>

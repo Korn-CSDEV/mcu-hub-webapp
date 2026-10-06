@@ -15,11 +15,212 @@
     REVIEWS: 'mcu_hub_movie_reviews',
     WATCHLIST: 'mcu_hub_user_watchlist',
     LIKES: 'mcu_hub_review_likes',
-    INTRO_SEEN: 'mcu_hub_intro_seen'
+    INTRO_SEEN: 'mcu_hub_intro_seen',
+    LANG: 'mcu_hub_lang'
   };
+
+  const TRANSLATIONS = {
+    th: {
+      navAllTitles: 'ภาพยนตร์ทั้งหมด',
+      navSagas: 'ซาก้าและเฟส',
+      navCharacterHub: 'ศูนย์รวมฮีโร่',
+      navTimeline: 'ไทม์ไลน์ศักดิ์สิทธิ์',
+      navWatchlist: 'รายการที่บันทึก',
+      navIntro: 'อินโทร',
+      navSignIn: 'เข้าสู่ระบบ / ลงทะเบียน',
+      navSignInShort: 'เข้าสู่ระบบ',
+      searchPlaceholder: 'ค้นหาจักรวาลมาร์เวล...',
+      langSwitch: 'ภาษา / Language',
+      featuredSpotlight: 'ไฮไลต์แนะนำ',
+      watchTrailer: 'ชมตัวอย่าง',
+      viewDetails: 'รายละเอียดและรีวิว',
+      addToWatchlist: 'เพิ่มในรายการที่บันทึก',
+      inWatchlist: 'บันทึกแล้ว',
+      characterHubHeading: 'กรองตามฮีโร่มาร์เวล',
+      characterHubSubtitle: 'ทั้งภาพยนตร์เดี่ยวและทีมอัปครอสโอเวอร์',
+      heroAll: 'ฮีโร่ทั้งหมด',
+      catalogSearchPh: 'ค้นหาชื่อเรื่อง, นักแสดง, ฮีโร่...',
+      sagaAll: 'มาร์เวลทั้งหมด',
+      sagaInfinity: 'ดิ อินฟินิตี้ ซาก้า',
+      sagaMultiverse: 'เดอะ มัลติเวิร์ส ซาก้า',
+      sagaSpiderman: 'สไปเดอร์แมน (Tobey/Andrew)',
+      sagaXMen: 'เอ็กซ์-เม็น (Fox)',
+      sagaSony: 'จักรวาลโซนี่ & เวน่อม',
+      sagaClassics: 'มาร์เวลคลาสสิก',
+      typeAll: 'ทั้งหมด',
+      typeMovies: 'ภาพยนตร์',
+      typeSeries: 'ซีรีส์',
+      btnReleaseOrder: 'เรียงตามวันฉาย',
+      btnChronoOrder: 'เรียงตามเหตุการณ์',
+      sortReleaseAsc: 'วันฉาย (เก่าสุดก่อน)',
+      sortReleaseDesc: 'วันฉาย (ใหม่สุดก่อน)',
+      sortRatingDesc: 'เรตติ้งสูงสุด',
+      sortBoxOfficeDesc: 'รายได้รวม (Box Office)',
+      sortTitleAsc: 'ชื่อเรื่อง (A – Z)',
+      critics: 'นักวิจารณ์',
+      audience: 'ผู้ชมทั่วไป',
+      director: 'ผู้กำกับ',
+      boxOffice: 'รายได้รวม',
+      runtime: 'ความยาว / ตอน',
+      activeHeroes: 'ฮีโร่ที่ปรากฏตัว',
+      synopsisOverview: 'เรื่องย่อและข้อมูลภาพยนตร์',
+      featuredCast: 'นักแสดงและตัวละครหลัก',
+      userReviews: 'รีวิวและคะแนนจากผู้ชม',
+      writeReview: 'เขียนรีวิวเรื่องนี้',
+      wantToWatch: 'อยากดู',
+      watching: 'กำลังดู',
+      completed: 'ดูแล้ว',
+      movieType: 'ภาพยนตร์',
+      seriesType: 'ซีรีส์'
+    },
+    en: {
+      navAllTitles: 'All Titles',
+      navSagas: 'Sagas & Phases',
+      navCharacterHub: 'Character Hub',
+      navTimeline: 'Sacred Timeline',
+      navWatchlist: 'My Watchlist',
+      navIntro: 'Intro',
+      navSignIn: 'Sign In / Register',
+      navSignInShort: 'Sign In',
+      searchPlaceholder: 'Search MCU...',
+      langSwitch: 'Language / ภาษา',
+      featuredSpotlight: 'FEATURED SPOTLIGHT',
+      watchTrailer: 'Watch Trailer',
+      viewDetails: 'Details & Reviews',
+      addToWatchlist: 'Add to Watchlist',
+      inWatchlist: 'In Watchlist',
+      characterHubHeading: 'Filter by Marvel Hero',
+      characterHubSubtitle: 'Standalone & crossover appearances',
+      heroAll: 'All Heroes',
+      catalogSearchPh: 'Search titles, cast, heroes...',
+      sagaAll: 'All Marvel',
+      sagaInfinity: 'Infinity Saga',
+      sagaMultiverse: 'Multiverse Saga',
+      sagaSpiderman: 'Spider-Man Legacy',
+      sagaXMen: 'Fox X-Men',
+      sagaSony: 'Sony Universe',
+      sagaClassics: 'Marvel Classics',
+      typeAll: 'All',
+      typeMovies: 'Movies',
+      typeSeries: 'Series',
+      btnReleaseOrder: 'Release Order',
+      btnChronoOrder: 'Chronological',
+      sortReleaseAsc: 'Release Date (Oldest First)',
+      sortReleaseDesc: 'Release Date (Newest First)',
+      sortRatingDesc: 'Highest Rated',
+      sortBoxOfficeDesc: 'Box Office Earnings',
+      sortTitleAsc: 'Title (A – Z)',
+      critics: 'Critics',
+      audience: 'Audience',
+      director: 'Director',
+      boxOffice: 'Box Office',
+      runtime: 'Runtime / Episodes',
+      activeHeroes: 'Active Heroes',
+      synopsisOverview: 'Synopsis & Overview',
+      featuredCast: 'Featured Heroes & Cast',
+      userReviews: 'User Reviews & Ratings',
+      writeReview: 'Write a Review',
+      wantToWatch: 'Want to Watch',
+      watching: 'Watching',
+      completed: 'Completed',
+      movieType: 'Movie',
+      seriesType: 'Series'
+    }
+  };
+
+  const HERO_TRANSLATIONS = {
+    all: { en: 'All Heroes', th: 'ฮีโร่ทั้งหมด' },
+    'Iron Man': { en: 'Iron Man', th: 'ไอรอนแมน' },
+    'Spider-Man': { en: 'Spider-Man', th: 'สไปเดอร์แมน' },
+    'Wolverine': { en: 'Wolverine', th: 'วูล์ฟเวอรีน' },
+    'Deadpool': { en: 'Deadpool', th: 'เดดพูล' },
+    'Doctor Doom': { en: 'Doctor Doom', th: 'ด็อกเตอร์ ดูม' },
+    'Thor': { en: 'Thor', th: 'ธอร์' },
+    'Captain America': { en: 'Captain America', th: 'กัปตันอเมริกา' },
+    'Doctor Strange': { en: 'Doctor Strange', th: 'ด็อกเตอร์สเตรนจ์' },
+    'Loki': { en: 'Loki', th: 'โลกิ' },
+    'Black Panther': { en: 'Black Panther', th: 'แบล็คแพนเธอร์' },
+    'Venom': { en: 'Venom', th: 'เวน่อม' },
+    'Ghost Rider': { en: 'Ghost Rider', th: 'โกสต์ไรเดอร์' },
+    'Blade': { en: 'Blade', th: 'เบลด' },
+    'Ant-Man': { en: 'Ant-Man', th: 'แอนท์-แมน' },
+    'Guardians': { en: 'Guardians', th: 'การ์เดียนส์' },
+    'Scarlet Witch': { en: 'Scarlet Witch', th: 'สการ์เล็ต วิทช์' },
+    'Hawkeye': { en: 'Hawkeye', th: 'ฮอว์กอาย' },
+    'Hulk': { en: 'Hulk', th: 'ฮัลค์' },
+    'Daredevil': { en: 'Daredevil', th: 'แดร์เดวิล' }
+  };
+
+  const PHASE_TRANSLATIONS = {
+    'Phase 1': { en: 'Phase 1', th: 'เฟส 1' },
+    'Phase 2': { en: 'Phase 2', th: 'เฟส 2' },
+    'Phase 3': { en: 'Phase 3', th: 'เฟส 3' },
+    'Phase 4': { en: 'Phase 4', th: 'เฟส 4' },
+    'Phase 5': { en: 'Phase 5', th: 'เฟส 5' },
+    'Phase 6': { en: 'Phase 6', th: 'เฟส 6' },
+    'Raimi Trilogy': { en: 'Raimi Trilogy', th: 'ไตรภาคไรมี' },
+    'Webb Series': { en: 'Webb Series', th: 'ดิ อะเมซิ่ง' },
+    'SSU': { en: 'SSU', th: 'จักรวาลโซนี่' },
+    'Original Trilogy': { en: 'Original Trilogy', th: 'ไตรภาคดั้งเดิม' },
+    'Wolverine Trilogy': { en: 'Wolverine Trilogy', th: 'ไตรภาควูล์ฟเวอรีน' },
+    'Prequel Era': { en: 'Prequel Era', th: 'ยุคพรีเควล' },
+    'Deadpool Series': { en: 'Deadpool Series', th: 'เดดพูล ซีรีส์' },
+    'Blade Trilogy': { en: 'Blade Trilogy', th: 'ไตรภาคเบลด' },
+    'Marvel Knights': { en: 'Marvel Knights', th: 'มาร์เวล ไนท์ส' },
+    'Story Era': { en: 'Story Era', th: 'ภาพยนตร์คลาสสิก' }
+  };
+
+  const GENRE_TRANSLATIONS = {
+    'Action': 'แอ็กชัน',
+    'Adventure': 'ผจญภัย',
+    'Sci-Fi': 'ไซไฟ',
+    'Comedy': 'คอมเมดี้',
+    'Drama': 'ดราม่า',
+    'Fantasy': 'แฟนตาซี',
+    'Animation': 'แอนิเมชัน',
+    'Thriller': 'ระทึกขวัญ',
+    'Crime': 'อาชญากรรม',
+    'Mystery': 'ลึกลับ',
+    'Horror': 'สยองขวัญ'
+  };
+
+  const SAGA_TRANSLATIONS = {
+    'The Infinity Saga': 'ดิ อินฟินิตี้ ซาก้า',
+    'The Multiverse Saga': 'เดอะ มัลติเวิร์ส ซาก้า',
+    'Spider-Man Legacy': 'สไปเดอร์แมน (Tobey/Andrew)',
+    'Fox X-Men': 'เอ็กซ์-เม็น (Fox)',
+    'Sony Spider-Man Universe': 'จักรวาลโซนี่ & เวน่อม',
+    'Sony Universe & Venom': 'จักรวาลโซนี่ & เวน่อม',
+    'Marvel Classics': 'มาร์เวลคลาสสิก',
+    'Marvel Classics (Ghost Rider & Blade)': 'มาร์เวลคลาสสิก',
+    'X-Men & Mutants (Fox)': 'เอ็กซ์-เม็น (Fox)'
+  };
+
+  function getPhaseLabel(phase) {
+    if (AppState.currentLang === 'th') {
+      return (PHASE_TRANSLATIONS[phase] && PHASE_TRANSLATIONS[phase].th) || phase;
+    }
+    return (PHASE_TRANSLATIONS[phase] && PHASE_TRANSLATIONS[phase].en) || phase;
+  }
+
+  function formatGenres(genres) {
+    if (!genres || !Array.isArray(genres)) return '';
+    if (AppState.currentLang === 'th') {
+      return genres.map(g => GENRE_TRANSLATIONS[g] || g).join(' • ');
+    }
+    return genres.join(' • ');
+  }
+
+  function getSagaLabel(saga) {
+    if (AppState.currentLang === 'th') {
+      return SAGA_TRANSLATIONS[saga] || saga;
+    }
+    return saga;
+  }
 
   const AppState = {
     currentView: 'browse',
+    currentLang: localStorage.getItem('mcu_hub_lang') || 'th',
     currentUser: null,           // null for Guest, or user object
     registeredUsers: [],
     reviews: {},                 // { [movieId]: Array of reviews }
@@ -31,17 +232,22 @@
       saga: 'all',               // 'all' | 'The Infinity Saga' | 'The Multiverse Saga'
       type: 'all',               // 'all' | 'movie' | 'series'
       hero: 'all',               // 'all' | 'Iron Man' | 'Spider-Man' | ...
-      order: 'release',          // 'release' | 'chrono'
-      sort: 'rating_desc'
+      order: 'release',          // 'release' | 'chrono' | 'custom'
+      sort: 'release_asc'        // 'release_asc' | 'release_desc' | 'rating_desc' | 'boxoffice_desc' | 'title_asc'
     },
-    selectedReviewRating: 5,     // 1 to 5 stars
+    timelineUniverse: 'all',
+    timelineOrder: 'chrono',
+    selectedReviewRating: 5,
     spotlightIndex: 0,
+    spotlightTimer: null,
+    spotlightPaused: false,
     spotlightIds: [
+      'avengers-doomsday-2026',
       'avengers-endgame-2019',
       'deadpool-and-wolverine-2024',
-      'avengers-infinity-war-2018',
       'spider-man-no-way-home-2021',
-      'iron-man-2008'
+      'avengers-secret-wars-2027',
+      'logan-2017'
     ]
   };
 
@@ -147,49 +353,64 @@
   }
 
   // ==========================================================================
-  // 3. MARVEL INTRO LOADING SCREEN (2.2 SECONDS)
+  // 3. MARVEL INTRO LOADING SCREEN (3.0 SECONDS CINEMATIC PACING)
   // ==========================================================================
   function initMarvelIntro() {
     const overlay = document.getElementById('marvelIntroOverlay');
-    const skipBtn = document.getElementById('skipIntroBtn');
+    const progressBar = document.getElementById('introProgressBar');
+    const logoContainer = document.getElementById('marvelLogoContainer');
     if (!overlay) return;
 
-    const introSeen = localStorage.getItem(STORAGE_KEYS.INTRO_SEEN);
+    const INTRO_DURATION_MS = 3000;
+    let introTimer = null;
+
+    function startIntro() {
+      overlay.style.display = 'flex';
+      overlay.classList.remove('intro-dismissed');
+
+      // Trigger reflow & restart CSS animations
+      if (progressBar) {
+        progressBar.classList.remove('intro-progress-anim');
+        void progressBar.offsetWidth;
+        progressBar.classList.add('intro-progress-anim');
+      }
+
+      if (logoContainer) {
+        logoContainer.classList.remove('marvel-logo-anim');
+        void logoContainer.offsetWidth;
+        logoContainer.classList.add('marvel-logo-anim');
+      }
+
+      if (introTimer) clearTimeout(introTimer);
+      introTimer = setTimeout(dismissIntro, INTRO_DURATION_MS);
+    }
 
     function dismissIntro() {
+      if (introTimer) {
+        clearTimeout(introTimer);
+        introTimer = null;
+      }
       overlay.classList.add('intro-dismissed');
-      localStorage.setItem(STORAGE_KEYS.INTRO_SEEN, 'true');
+      sessionStorage.setItem('mcu_hub_session_intro_seen', 'true');
       setTimeout(() => {
         overlay.style.display = 'none';
-      }, 600);
+      }, 550);
     }
 
-    if (skipBtn) {
-      skipBtn.addEventListener('click', dismissIntro);
-    }
+    // Check if session has already seen the intro,
+    // BUT if the page was explicitly reloaded (F5 / browser reload), allow intro to play!
+    const isReload = window.performance && 
+      window.performance.getEntriesByType && 
+      window.performance.getEntriesByType('navigation')[0] && 
+      window.performance.getEntriesByType('navigation')[0].type === 'reload';
 
-    if (introSeen === 'true') {
-      // Returning user: dismiss immediately
+    const sessionSeen = sessionStorage.getItem('mcu_hub_session_intro_seen');
+
+    if (sessionSeen === 'true' && !isReload) {
       overlay.style.display = 'none';
     } else {
-      // 2.2 seconds cinematic intro
-      setTimeout(dismissIntro, 2200);
+      startIntro();
     }
-
-    // Replay intro handlers (for navbar / footer triggers)
-    const replayButtons = [
-      document.getElementById('footerReplayIntroBtn'),
-      document.getElementById('mobileReplayIntroBtn')
-    ];
-    replayButtons.forEach(btn => {
-      if (btn) {
-        btn.addEventListener('click', () => {
-          overlay.style.display = 'flex';
-          overlay.classList.remove('intro-dismissed');
-          setTimeout(dismissIntro, 2400);
-        });
-      }
-    });
   }
 
   // ==========================================================================
@@ -506,104 +727,181 @@
   }
 
   // ==========================================================================
-  // 7. HERO SPOTLIGHT CAROUSEL
+  // 7. HERO SPOTLIGHT CAROUSEL CONTROLLER (SMOOTH TRANSITIONS & AUTO-PLAY)
   // ==========================================================================
-  function renderHeroSpotlight() {
-    const movie = window.MCU_CATALOG.find(m => m.id === AppState.spotlightIds[AppState.spotlightIndex]);
+  let spotlightTransitionTimeout = null;
+
+  function startSpotlightTimer() {
+    stopSpotlightTimer();
+    AppState.spotlightTimer = setInterval(() => {
+      if (AppState.currentView === 'browse' && !AppState.activeMovie && !AppState.spotlightPaused) {
+        nextSpotlight();
+      }
+    }, 5000);
+  }
+
+  function stopSpotlightTimer() {
+    if (AppState.spotlightTimer) {
+      clearInterval(AppState.spotlightTimer);
+      AppState.spotlightTimer = null;
+    }
+  }
+
+  function nextSpotlight() {
+    AppState.spotlightIndex = (AppState.spotlightIndex + 1) % AppState.spotlightIds.length;
+    renderHeroSpotlight(false);
+  }
+
+  function prevSpotlight() {
+    AppState.spotlightIndex = (AppState.spotlightIndex - 1 + AppState.spotlightIds.length) % AppState.spotlightIds.length;
+    renderHeroSpotlight(false);
+  }
+
+  function renderHeroSpotlight(immediate = false) {
+    const movieId = AppState.spotlightIds[AppState.spotlightIndex] || AppState.spotlightIds[0];
+    const movie = window.MCU_CATALOG.find(m => m.id === movieId);
     if (!movie) return;
 
+    const contentContainer = document.getElementById('heroSpotlightContent');
     const backdropImg = document.getElementById('heroBackdropImg');
-    const phaseBadge = document.getElementById('heroPhaseBadge');
-    const typeBadge = document.getElementById('heroTypeBadge');
-    const scoreBadge = document.getElementById('heroScoreBadge');
-    const title = document.getElementById('heroTitle');
-    const tagline = document.getElementById('heroTagline');
-    const synopsis = document.getElementById('heroSynopsis');
-    const trailerBtn = document.getElementById('heroTrailerBtn');
-    const detailBtn = document.getElementById('heroDetailBtn');
-    const watchlistBtn = document.getElementById('heroWatchlistBtn');
-    const watchlistBtnText = document.getElementById('heroWatchlistBtnText');
-    const dotsContainer = document.getElementById('heroDotsContainer');
 
-    backdropImg.src = movie.backdrop;
-    backdropImg.onerror = () => { backdropImg.src = movie.onlineBackdrop || 'assets/images/backdrops/avengers-endgame-2019.svg'; };
+    if (spotlightTransitionTimeout) {
+      clearTimeout(spotlightTransitionTimeout);
+      spotlightTransitionTimeout = null;
+    }
 
-    phaseBadge.textContent = movie.phase;
-    typeBadge.textContent = `${movie.type === 'movie' ? 'Movie' : 'Series'} • ${movie.releaseYear}`;
-    scoreBadge.innerHTML = `<i class="fa-solid fa-star text-xs text-amber-400"></i> ★ ${getAverageRating(movie.id)} / 5.0`;
-    title.textContent = movie.title;
-    tagline.textContent = `"${movie.tagline}"`;
-    synopsis.textContent = movie.synopsis;
+    const applyContent = () => {
+      const isTh = AppState.currentLang === 'th';
+      const phaseBadge = document.getElementById('heroPhaseBadge');
+      const typeBadge = document.getElementById('heroTypeBadge');
+      const scoreBadge = document.getElementById('heroScoreBadge');
+      const title = document.getElementById('heroTitle');
+      const tagline = document.getElementById('heroTagline');
+      const synopsis = document.getElementById('heroSynopsis');
+      const trailerBtn = document.getElementById('heroTrailerBtn');
+      const detailBtn = document.getElementById('heroDetailBtn');
+      const watchlistBtn = document.getElementById('heroWatchlistBtn');
+      const dotsContainer = document.getElementById('heroDotsContainer');
 
-    trailerBtn.onclick = () => openTrailerModal(movie.trailerKey, movie.title);
-    detailBtn.onclick = () => openMovieDetailModal(movie.id);
+      if (backdropImg) {
+        backdropImg.src = movie.backdrop || movie.onlineBackdrop;
+        backdropImg.onerror = () => { backdropImg.src = movie.onlineBackdrop || 'assets/images/backdrops/avengers-endgame-2019.svg'; };
+      }
 
-    const isSaved = !!AppState.watchlist[movie.id];
-    watchlistBtnText.textContent = isSaved ? 'In Watchlist' : 'Add to Watchlist';
-    watchlistBtn.className = `glass-panel hover:bg-white/10 border ${
-      isSaved ? 'border-emerald-500/80 text-emerald-300' : 'border-slate-700 text-slate-200'
-    } px-4 py-2.5 rounded-lg text-xs font-medium flex items-center gap-2 transition-all`;
-    watchlistBtn.innerHTML = `
-      <i class="${isSaved ? 'fa-solid fa-bookmark text-emerald-400' : 'fa-regular fa-bookmark'}"></i>
-      <span>${isSaved ? 'In Watchlist' : 'Add to Watchlist'}</span>
-    `;
-    watchlistBtn.onclick = () => {
-      toggleWatchlist(movie.id);
-      renderHeroSpotlight();
+      if (phaseBadge) phaseBadge.textContent = isTh ? (movie.phaseTh || movie.phase) : movie.phase;
+      if (typeBadge) {
+        const typeStr = movie.type === 'movie' ? (isTh ? 'ภาพยนตร์' : 'Movie') : (isTh ? 'ซีรีส์' : 'Series');
+        typeBadge.textContent = `${typeStr} • ${movie.releaseYear}`;
+      }
+      if (scoreBadge) scoreBadge.textContent = `${getAverageRating(movie.id)} / 5.0`;
+
+      if (title) title.textContent = isTh ? (movie.titleTh || movie.title) : movie.title;
+      if (tagline) {
+        const tagText = isTh ? (movie.taglineTh || movie.tagline) : movie.tagline;
+        tagline.textContent = tagText ? `"${tagText}"` : '';
+      }
+      if (synopsis) synopsis.textContent = isTh ? (movie.synopsisTh || movie.synopsis) : movie.synopsis;
+
+      if (trailerBtn) {
+        trailerBtn.onclick = () => openTrailerModal(movie.trailerKey, isTh ? (movie.titleTh || movie.title) : movie.title);
+      }
+      if (detailBtn) {
+        detailBtn.onclick = () => openMovieDetailModal(movie.id);
+      }
+
+      const isSaved = !!AppState.watchlist[movie.id];
+      if (watchlistBtn) {
+        const label = isSaved 
+          ? (isTh ? 'บันทึกแล้ว' : 'In Watchlist') 
+          : (isTh ? 'เพิ่มในรายการที่บันทึก' : 'Add to Watchlist');
+        
+        watchlistBtn.className = `glass-panel hover:bg-white/10 border ${
+          isSaved ? 'border-emerald-500/80 text-emerald-300' : 'border-slate-700 text-slate-200'
+        } px-4 py-2.5 rounded-lg text-xs font-semibold flex items-center gap-2 transition-all cursor-pointer`;
+        
+        watchlistBtn.innerHTML = `
+          <i class="${isSaved ? 'fa-solid fa-check text-emerald-400' : 'fa-regular fa-bookmark'}"></i>
+          <span>${label}</span>
+        `;
+        watchlistBtn.onclick = () => {
+          toggleWatchlist(movie.id);
+          renderHeroSpotlight(true);
+        };
+      }
+
+      // Render Dots indicator cleanly
+      if (dotsContainer) {
+        dotsContainer.innerHTML = '';
+        AppState.spotlightIds.forEach((id, idx) => {
+          const dot = document.createElement('button');
+          const isActive = idx === AppState.spotlightIndex;
+          dot.setAttribute('aria-label', `Slide ${idx + 1}`);
+          dot.className = `h-2 rounded-full transition-all duration-300 cursor-pointer ${
+            isActive
+              ? 'w-8 bg-mcu-red shadow-lg shadow-mcu-red/50'
+              : 'w-2.5 bg-slate-700 hover:bg-slate-500'
+          }`;
+          dot.onclick = () => {
+            AppState.spotlightIndex = idx;
+            renderHeroSpotlight(false);
+            startSpotlightTimer();
+          };
+          dotsContainer.appendChild(dot);
+        });
+      }
+
+      // Remove transition styles for smooth entrance
+      if (contentContainer) contentContainer.classList.remove('is-transitioning');
+      if (backdropImg) backdropImg.classList.remove('is-transitioning');
     };
 
-    if (dotsContainer) {
-      dotsContainer.innerHTML = '';
-      AppState.spotlightIds.forEach((id, idx) => {
-        const dot = document.createElement('button');
-        dot.className = `h-2 rounded-full transition-all ${
-          idx === AppState.spotlightIndex
-            ? 'w-8 bg-mcu-red shadow-lg shadow-mcu-red/50'
-            : 'w-2.5 bg-slate-700 hover:bg-slate-500'
-        }`;
-        dot.onclick = () => {
-          AppState.spotlightIndex = idx;
-          renderHeroSpotlight();
-        };
-        dotsContainer.appendChild(dot);
-      });
+    if (immediate) {
+      applyContent();
+    } else {
+      if (contentContainer) contentContainer.classList.add('is-transitioning');
+      if (backdropImg) backdropImg.classList.add('is-transitioning');
+      spotlightTransitionTimeout = setTimeout(applyContent, 190);
     }
   }
 
   // ==========================================================================
-  // 8. CHARACTER HUB STRIP & HERO FILTERING
+  // 8. CHARACTER HUB STRIP & HERO FILTERING (CLEAN MODERN UI)
   // ==========================================================================
   function renderHeroFilterStrip() {
     const container = document.getElementById('heroFilterStripContainer');
     if (!container) return;
     container.innerHTML = '';
 
+    const isTh = AppState.currentLang === 'th';
+
     window.MAJOR_HEROES.forEach(hero => {
       const isActive = AppState.filters.hero === hero.id;
       const btn = document.createElement('button');
-      btn.className = `flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex-shrink-0 border ${
+      btn.className = `px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all flex-shrink-0 cursor-pointer border ${
         isActive
           ? 'bg-mcu-red border-mcu-red text-white shadow-md shadow-mcu-red/40'
-          : 'bg-[#131A2B] border-slate-700 text-slate-300 hover:text-white hover:border-slate-500'
+          : 'bg-[#131A2B] border-slate-700/80 text-slate-300 hover:text-white hover:border-slate-500'
       }`;
 
-      const iconHtml = hero.avatar
-        ? `<img src="${hero.avatar}" alt="${hero.name}" class="w-4 h-4 rounded-full object-cover">`
-        : `<i class="${hero.icon} text-[11px]"></i>`;
+      const heroName = (HERO_TRANSLATIONS[hero.id] && HERO_TRANSLATIONS[hero.id][AppState.currentLang]) 
+        || (isTh ? (hero.nameTh || hero.name) : hero.name);
 
-      btn.innerHTML = `${iconHtml} <span>${hero.name}</span>`;
+      btn.textContent = heroName;
       btn.onclick = () => {
         AppState.filters.hero = hero.id;
         renderHeroFilterStrip();
         renderCatalog();
-        showToast(hero.id === 'all' ? 'Showing all Marvel movies' : `Filtered movies featuring ${hero.name}!`, 'info');
+        const toastMsg = hero.id === 'all'
+          ? (isTh ? 'แสดงภาพยนตร์มาร์เวลทั้งหมด' : 'Showing all Marvel movies')
+          : (isTh ? `กรองภาพยนตร์ที่มี ${heroName}` : `Filtered movies featuring ${hero.name}`);
+        showToast(toastMsg, 'info');
       };
       container.appendChild(btn);
     });
   }
 
   // ==========================================================================
-  // 9. CATALOG FILTERING & RENDERING (RELEASE VS CHRONO ORDER)
+  // 9. CATALOG FILTERING & RENDERING (EXACT RELEASE DATE VS CHRONO ORDER)
   // ==========================================================================
   function getFilteredMovies() {
     let list = [...window.MCU_CATALOG];
@@ -612,7 +910,7 @@
     const q = AppState.filters.search.trim().toLowerCase();
     if (q) {
       list = list.filter(m => {
-        const matchTitle = m.title.toLowerCase().includes(q);
+        const matchTitle = m.title.toLowerCase().includes(q) || (m.titleTh && m.titleTh.toLowerCase().includes(q));
         const matchDirector = m.director.toLowerCase().includes(q);
         const matchCast = m.cast.some(c => c.name.toLowerCase().includes(q) || c.role.toLowerCase().includes(q));
         const matchGenre = m.genres.some(g => g.toLowerCase().includes(q));
@@ -636,27 +934,34 @@
       list = list.filter(m => m.activeHeroes.includes(AppState.filters.hero));
     }
 
-    // Order mode: Release Order vs Chronological Order
+    // Order & Sort logic
     if (AppState.filters.order === 'chrono') {
-      list.sort((a, b) => a.chronologicalRank - b.chronologicalRank);
-    } else {
-      // Default: Release Order
-      list.sort((a, b) => a.releaseYear - b.releaseYear);
-    }
-
-    // Additional Sort Dropdown if not chronological
-    if (AppState.filters.order !== 'chrono') {
-      if (AppState.filters.sort === 'rating_desc') {
-        list.sort((a, b) => getAverageRating(b.id) - getAverageRating(a.id));
-      } else if (AppState.filters.sort === 'year_desc') {
-        list.sort((a, b) => b.releaseYear - a.releaseYear);
-      } else if (AppState.filters.sort === 'year_asc') {
-        list.sort((a, b) => a.releaseYear - b.releaseYear);
-      } else if (AppState.filters.sort === 'boxoffice_desc') {
-        list.sort((a, b) => parseBoxOffice(b.boxOffice) - parseBoxOffice(a.boxOffice));
-      } else if (AppState.filters.sort === 'title_asc') {
-        list.sort((a, b) => a.title.localeCompare(b.title));
-      }
+      list.sort((a, b) => (a.chronologicalRank || 999) - (b.chronologicalRank || 999));
+    } else if (AppState.filters.order === 'release' || AppState.filters.sort === 'release_asc') {
+      // THEATRICAL RELEASE ORDER: Oldest First
+      list.sort((a, b) => {
+        const timeA = a.releaseDate ? Date.parse(a.releaseDate) : new Date(a.releaseYear, 0, 1).getTime();
+        const timeB = b.releaseDate ? Date.parse(b.releaseDate) : new Date(b.releaseYear, 0, 1).getTime();
+        return timeA - timeB;
+      });
+    } else if (AppState.filters.sort === 'release_desc') {
+      // THEATRICAL RELEASE ORDER: Newest First
+      list.sort((a, b) => {
+        const timeA = a.releaseDate ? Date.parse(a.releaseDate) : new Date(a.releaseYear, 0, 1).getTime();
+        const timeB = b.releaseDate ? Date.parse(b.releaseDate) : new Date(b.releaseYear, 0, 1).getTime();
+        return timeB - timeA;
+      });
+    } else if (AppState.filters.sort === 'rating_desc') {
+      list.sort((a, b) => getAverageRating(b.id) - getAverageRating(a.id));
+    } else if (AppState.filters.sort === 'boxoffice_desc') {
+      list.sort((a, b) => parseBoxOffice(b.boxOffice) - parseBoxOffice(a.boxOffice));
+    } else if (AppState.filters.sort === 'title_asc') {
+      const isTh = AppState.currentLang === 'th';
+      list.sort((a, b) => {
+        const titleA = isTh ? (a.titleTh || a.title) : a.title;
+        const titleB = isTh ? (b.titleTh || b.title) : b.title;
+        return titleA.localeCompare(titleB);
+      });
     }
 
     return list;
@@ -667,6 +972,10 @@
     const clean = str.replace(/[$,\s]/g, '').toLowerCase();
     if (clean.includes('billion')) return parseFloat(clean) * 1000;
     if (clean.includes('million')) return parseFloat(clean);
+    const num = parseFloat(clean);
+    if (!isNaN(num)) {
+      return num > 10000 ? num / 1000000 : num;
+    }
     return 0;
   }
 
@@ -683,6 +992,7 @@
 
   function renderCatalog() {
     const movies = getFilteredMovies();
+    const isTh = AppState.currentLang === 'th';
     const countEl = document.getElementById('resultsCount');
     const gridContainer = document.getElementById('movieGrid');
     const emptyState = document.getElementById('emptyCatalogState');
@@ -694,14 +1004,15 @@
     if (activeFiltersContainer) {
       activeFiltersContainer.innerHTML = '';
       if (AppState.filters.search) {
-        activeFiltersContainer.appendChild(createFilterTag(`Search: "${AppState.filters.search}"`, () => {
+        activeFiltersContainer.appendChild(createFilterTag(`${isTh ? 'ค้นหา' : 'Search'}: "${AppState.filters.search}"`, () => {
           AppState.filters.search = '';
           document.getElementById('catalogSearchInput').value = '';
           renderCatalog();
         }));
       }
       if (AppState.filters.hero !== 'all') {
-        activeFiltersContainer.appendChild(createFilterTag(`Hero: ${AppState.filters.hero}`, () => {
+        const heroName = (HERO_TRANSLATIONS[AppState.filters.hero] && HERO_TRANSLATIONS[AppState.filters.hero][AppState.currentLang]) || AppState.filters.hero;
+        activeFiltersContainer.appendChild(createFilterTag(`${isTh ? 'ฮีโร่' : 'Hero'}: ${heroName}`, () => {
           AppState.filters.hero = 'all';
           renderHeroFilterStrip();
           renderCatalog();
@@ -715,7 +1026,8 @@
         }));
       }
       if (AppState.filters.type !== 'all') {
-        activeFiltersContainer.appendChild(createFilterTag(`Type: ${AppState.filters.type}`, () => {
+        const typeLabel = AppState.filters.type === 'movie' ? (isTh ? 'ภาพยนตร์' : 'Movie') : (isTh ? 'ซีรีส์' : 'Series');
+        activeFiltersContainer.appendChild(createFilterTag(typeLabel, () => {
           AppState.filters.type = 'all';
           updateTypeFilterButtons();
           renderCatalog();
@@ -736,6 +1048,8 @@
     movies.forEach(movie => {
       const isSaved = !!AppState.watchlist[movie.id];
       const avgRating = getAverageRating(movie.id);
+      const displayTitle = isTh ? (movie.titleTh || movie.title) : movie.title;
+      const displaySynopsis = isTh ? (movie.synopsisTh || movie.synopsis) : movie.synopsis;
 
       const card = document.createElement('div');
       card.className = 'movie-card group relative bg-[#0C101A] rounded-xl overflow-hidden border border-slate-800 flex flex-col cursor-pointer';
@@ -744,7 +1058,7 @@
         <div class="relative w-full aspect-[2/3] overflow-hidden bg-slate-900">
           <img 
             src="${movie.poster}" 
-            alt="${movie.title}" 
+            alt="${displayTitle}" 
             loading="lazy"
             onerror="this.src='assets/images/posters/iron-man-2008.svg'"
             class="card-poster-img w-full h-full object-cover"
@@ -757,7 +1071,7 @@
 
           <!-- Phase badge top-left -->
           <div class="absolute top-2 left-2 px-2 py-0.5 rounded text-[9px] font-extrabold uppercase tracking-wider backdrop-blur-md ${getPhaseBadgeClass(movie.phase)}">
-            ${movie.phase}
+            ${getPhaseLabel(movie.phase)}
           </div>
 
           <!-- Quick Watchlist Bookmark Button -->
@@ -767,32 +1081,34 @@
                 ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/40'
                 : 'bg-black/70 hover:bg-mcu-red text-slate-300 hover:text-white border border-white/20'
             }"
-            title="${isSaved ? 'In Watchlist' : 'Add to Watchlist'}"
+            title="${isSaved ? (isTh ? 'บันทึกแล้ว' : 'In Watchlist') : (isTh ? 'เพิ่มในรายการ' : 'Add to Watchlist')}"
           >
             <i class="${isSaved ? 'fa-solid fa-bookmark' : 'fa-regular fa-bookmark'} text-xs"></i>
           </button>
 
           <!-- Poster Hover Overlay with Quick Info -->
           <div class="poster-overlay absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-0 transition-opacity duration-300 p-4 flex flex-col justify-end text-white">
-            <span class="text-[10px] text-mcu-gold font-bold uppercase tracking-wider">${movie.genres.join(' • ')}</span>
-            <p class="text-[11px] text-slate-300 line-clamp-3 mt-1 leading-snug">${movie.synopsis}</p>
+            <span class="text-[10px] text-mcu-gold font-bold uppercase tracking-wider">${formatGenres(movie.genres)}</span>
+            <p class="text-[11px] text-slate-300 line-clamp-3 mt-1 leading-snug">${displaySynopsis}</p>
             <div class="mt-3 flex items-center justify-between text-[10px]">
               <span class="bg-white/15 px-2 py-0.5 rounded font-semibold text-slate-200">
-                <i class="fa-regular fa-clock"></i> ${movie.runtime}
+                ${isTh ? movie.runtime.replace('min', ' นาที') : movie.runtime}
               </span>
-              <span class="text-mcu-cyan font-bold uppercase">View Theme →</span>
+              <span class="text-mcu-cyan font-bold uppercase">${isTh ? 'ดูรายละเอียดและรีวิว →' : 'View Details & Reviews →'}</span>
             </div>
           </div>
         </div>
 
         <div class="p-3 flex-grow flex flex-col justify-between border-t border-slate-800/80 bg-[#0C101A]">
           <div>
-            <h3 class="font-bebas text-lg tracking-wide text-white group-hover:text-mcu-red transition-colors truncate" title="${movie.title}">
-              ${movie.title}
+            <h3 class="font-bebas text-lg tracking-wide text-white group-hover:text-mcu-red transition-colors truncate" title="${displayTitle}">
+              ${displayTitle}
             </h3>
             <div class="flex items-center justify-between text-[11px] text-slate-400 mt-0.5">
               <span>${movie.releaseYear}</span>
-              <span class="text-slate-500 text-[10px]">#${movie.chronologicalRank} In-Timeline</span>
+              <span class="text-slate-500 text-[10px] truncate max-w-[135px]" title="${isTh ? (movie.sagaTh || movie.universe) : movie.universe}">
+                ${movie.universe === 'MCU (Sacred Timeline)' ? (isTh ? `#${movie.chronologicalRank} ในไทม์ไลน์` : `#${movie.chronologicalRank} In-Timeline`) : (isTh ? (movie.sagaTh || getSagaLabel(movie.saga.split(' (')[0])) : movie.saga.split(' (')[0])}
+              </span>
             </div>
           </div>
         </div>
@@ -830,7 +1146,17 @@
       case 'Phase 3': return 'badge-phase-3';
       case 'Phase 4': return 'badge-phase-4';
       case 'Phase 5': return 'badge-phase-5';
-      default: return 'bg-slate-800 text-slate-300';
+      case 'Raimi Trilogy': return 'bg-red-600/30 text-red-300 border border-red-500/40';
+      case 'Webb Series': return 'bg-blue-600/30 text-blue-300 border border-blue-500/40';
+      case 'SSU': return 'bg-purple-900/40 text-purple-300 border border-purple-500/40';
+      case 'Original Trilogy': return 'bg-cyan-900/40 text-cyan-300 border border-cyan-500/40';
+      case 'Wolverine Trilogy': return 'bg-amber-900/40 text-amber-300 border border-amber-500/40';
+      case 'Prequel Era': return 'bg-indigo-900/40 text-indigo-300 border border-indigo-500/40';
+      case 'Deadpool Series': return 'bg-red-700/40 text-red-300 border border-red-600/40';
+      case 'Blade Trilogy': return 'bg-rose-950 text-rose-300 border border-rose-600/40';
+      case 'Marvel Knights': return 'bg-orange-900/40 text-orange-300 border border-orange-500/40';
+      case 'Story Era': return 'bg-sky-900/40 text-sky-300 border border-sky-500/40';
+      default: return 'bg-slate-800 text-slate-300 border border-slate-700';
     }
   }
 
@@ -863,35 +1189,40 @@
     posterImg.onerror = () => { posterImg.src = movie.onlinePoster || 'assets/images/posters/iron-man-2008.svg'; };
 
     // Metadata & badges
+    const isTh = AppState.currentLang === 'th';
+    const displayTitle = isTh ? (movie.titleTh || movie.title) : movie.title;
+    const displayTagline = isTh ? (movie.taglineTh || movie.tagline) : movie.tagline;
+    const displaySynopsis = isTh ? (movie.synopsisTh || movie.synopsis) : movie.synopsis;
+
     const phaseBadge = document.getElementById('detailPhaseBadge');
-    phaseBadge.textContent = movie.phase;
+    phaseBadge.textContent = getPhaseLabel(movie.phase);
     phaseBadge.className = `px-2.5 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider ${getPhaseBadgeClass(movie.phase)}`;
 
-    document.getElementById('detailTypeBadge').textContent = movie.type === 'movie' ? 'Feature Film' : 'Disney+ Series';
+    document.getElementById('detailTypeBadge').textContent = movie.universe !== 'MCU (Sacred Timeline)' ? (isTh ? (movie.sagaTh || movie.universe) : movie.universe.replace(' Universe', '')) : (movie.type === 'movie' ? (isTh ? 'ภาพยนตร์' : 'Feature Film') : (isTh ? 'ซีรีส์ Disney+' : 'Disney+ Series'));
     document.getElementById('detailYearBadge').textContent = movie.releaseYear;
     document.getElementById('detailRatingBadge').textContent = movie.ageRating;
 
-    document.getElementById('detailTitle').textContent = movie.title;
-    document.getElementById('detailTagline').textContent = `"${movie.tagline}"`;
+    document.getElementById('detailTitle').textContent = displayTitle;
+    document.getElementById('detailTagline').textContent = displayTagline ? `"${displayTagline}"` : '';
 
     // Ratings (1 to 5 Stars scale)
     const avgRating = getAverageRating(movie.id);
     document.getElementById('detailScore').textContent = `★ ${avgRating}`;
     const reviewsCount = (AppState.reviews[movie.id] || []).length;
-    document.getElementById('detailReviewsCountBadge').textContent = `(${reviewsCount} ${reviewsCount === 1 ? 'review' : 'reviews'})`;
+    document.getElementById('detailReviewsCountBadge').textContent = `(${reviewsCount} ${isTh ? 'รีวิว' : (reviewsCount === 1 ? 'review' : 'reviews')})`;
     document.getElementById('detailCriticScore').textContent = `${movie.criticScore}%`;
     document.getElementById('detailAudienceScore').textContent = `${movie.audienceScore}%`;
 
     // Synopsis & details
-    document.getElementById('detailSynopsis').textContent = movie.synopsis;
+    document.getElementById('detailSynopsis').textContent = displaySynopsis;
     document.getElementById('detailDirector').textContent = movie.director;
     document.getElementById('detailBoxOffice').textContent = movie.boxOffice;
-    document.getElementById('detailRuntime').textContent = movie.runtime;
-    document.getElementById('detailActiveHeroes').textContent = movie.activeHeroes.join(', ');
+    document.getElementById('detailRuntime').textContent = isTh ? movie.runtime.replace('min', ' นาที') : movie.runtime;
+    document.getElementById('detailActiveHeroes').textContent = movie.activeHeroes.map(h => (HERO_TRANSLATIONS[h] && HERO_TRANSLATIONS[h][AppState.currentLang]) || h).join(', ');
 
     // Trailer Button Action
     document.getElementById('detailTrailerPlayBtn').onclick = () => {
-      openTrailerModal(movie.trailerKey, movie.title);
+      openTrailerModal(movie.trailerKey, displayTitle);
     };
 
     // Watchlist Toggle Button
@@ -904,7 +1235,7 @@
       const card = document.createElement('div');
       card.className = 'flex items-center gap-3 bg-black/40 p-2.5 rounded-xl border border-white/10 min-w-[200px] flex-shrink-0';
       card.innerHTML = `
-        <img src="${castMember.avatar}" alt="${castMember.role}" class="w-10 h-10 rounded-full border border-mcu-red bg-slate-900 object-cover flex-shrink-0">
+        <img src="${castMember.avatar}" alt="${castMember.name}" class="w-10 h-10 rounded-full border border-mcu-red bg-slate-900 object-cover flex-shrink-0" onerror="this.src='assets/images/avatars/ironman.svg'">
         <div class="truncate">
           <strong class="text-xs text-white block truncate">${castMember.name}</strong>
           <span class="text-[10px] text-mcu-gold block truncate">${castMember.role}</span>
@@ -932,15 +1263,16 @@
     const btn = document.getElementById('detailWatchlistToggleBtn');
     if (!btn || !AppState.activeMovie) return;
 
+    const isTh = AppState.currentLang === 'th';
     const isSaved = !!AppState.watchlist[AppState.activeMovie.id];
-    btn.className = `border px-4 py-2 rounded-lg text-xs font-semibold flex items-center gap-2 transition-all ${
+    btn.className = `border px-4 py-2 rounded-lg text-xs font-semibold flex items-center gap-2 transition-all cursor-pointer ${
       isSaved
         ? 'bg-emerald-600/30 text-emerald-300 border-emerald-500/80'
         : 'bg-black/50 hover:bg-black/70 text-white border-white/20'
     }`;
     btn.innerHTML = `
-      <i class="${isSaved ? 'fa-solid fa-bookmark text-emerald-400' : 'fa-regular fa-bookmark'}"></i>
-      <span>${isSaved ? 'In Your Watchlist (Saved)' : 'Add to Watchlist'}</span>
+      <i class="${isSaved ? 'fa-solid fa-check text-emerald-400' : 'fa-regular fa-bookmark'}"></i>
+      <span>${isSaved ? (isTh ? 'บันทึกในรายการของคุณแล้ว' : 'In Your Watchlist (Saved)') : (isTh ? 'เพิ่มในรายการที่บันทึก' : 'Add to Watchlist')}</span>
     `;
 
     btn.onclick = () => {
@@ -1191,6 +1523,8 @@
     if (!container) return;
     container.innerHTML = '';
 
+    const isTh = AppState.currentLang === 'th';
+
     window.MCU_PHASES.forEach(phase => {
       const phaseMovies = window.MCU_CATALOG.filter(m => m.phase === phase.id);
       const topMovie = [...phaseMovies].sort((a, b) => getAverageRating(b.id) - getAverageRating(a.id))[0];
@@ -1204,15 +1538,15 @@
             <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${phase.badgeColor}">
               ${phase.span}
             </span>
-            <span class="text-xs font-semibold text-slate-400">${phaseMovies.length} Titles</span>
+            <span class="text-xs font-semibold text-slate-400">${phaseMovies.length} ${isTh ? 'เรื่อง' : 'Titles'}</span>
           </div>
 
           <h3 class="font-bebas text-2xl text-white">
-            ${phase.name}
+            ${isTh ? (phase.nameTh || phase.name) : phase.name}
           </h3>
 
           <p class="text-xs text-slate-300 leading-relaxed">
-            ${phase.description}
+            ${isTh ? (phase.descriptionTh || phase.description) : phase.description}
           </p>
 
           ${
@@ -1221,8 +1555,8 @@
               <div class="bg-[#0A0D15] p-3 rounded-xl border border-slate-800 mt-4 flex items-center gap-3">
                 <img src="${topMovie.poster}" alt="${topMovie.title}" class="w-10 h-14 object-cover rounded border border-slate-700 flex-shrink-0" onerror="this.src='assets/images/posters/iron-man-2008.svg'">
                 <div>
-                  <span class="text-[9px] uppercase font-bold text-amber-400 block">Top Rated</span>
-                  <strong class="text-xs text-white block truncate">${topMovie.title}</strong>
+                  <span class="text-[9px] uppercase font-bold text-amber-400 block">${isTh ? 'เรตติ้งสูงสุด' : 'Top Rated'}</span>
+                  <strong class="text-xs text-white block truncate">${isTh ? (topMovie.titleTh || topMovie.title) : topMovie.title}</strong>
                   <span class="text-[10px] text-slate-400">★ ${getAverageRating(topMovie.id)} / 5.0</span>
                 </div>
               </div>
@@ -1232,7 +1566,7 @@
         </div>
 
         <button class="filter-phase-btn mt-5 w-full bg-slate-800 hover:bg-mcu-red text-white py-2 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2">
-          Explore ${phase.id} Titles →
+          ${isTh ? ('สำรวจภาพยนตร์ใน ' + (phase.nameTh || phase.id) + ' →') : ('Explore ' + phase.id + ' Titles →')}
         </button>
       `;
 
@@ -1296,8 +1630,18 @@
     if (!container) return;
     container.innerHTML = '';
 
-    const movies = [...window.MCU_CATALOG];
-    if (AppState.filters.order === 'chrono') {
+    const isTh = AppState.currentLang === 'th';
+    let movies = [...window.MCU_CATALOG];
+    if (AppState.timelineUniverse && AppState.timelineUniverse !== 'all') {
+      if (AppState.timelineUniverse === 'Spider-Man Legacy') {
+        movies = movies.filter(m => m.universe.includes('Spider-Man Legacy'));
+      } else {
+        movies = movies.filter(m => m.universe === AppState.timelineUniverse);
+      }
+    }
+
+    const isChrono = AppState.timelineOrder === 'chrono';
+    if (isChrono) {
       movies.sort((a, b) => a.chronologicalRank - b.chronologicalRank);
     } else {
       movies.sort((a, b) => a.releaseYear - b.releaseYear);
@@ -1305,49 +1649,54 @@
 
     movies.forEach((movie, idx) => {
       const isEven = idx % 2 === 0;
-      const isSaved = !!AppState.watchlist[movie.id];
       const avgRating = getAverageRating(movie.id);
-
-      const node = document.createElement('div');
-      node.className = 'relative flex flex-col md:flex-row items-center w-full';
+      const yearText = isChrono ? (isTh ? `${movie.chronologicalYear} (ตามไทม์ไลน์)` : movie.chronologicalYear) : movie.releaseYear;
+      const displayTitle = isTh ? (movie.titleTh || movie.title) : movie.title;
+      const displaySynopsis = isTh ? (movie.synopsisTh || movie.synopsis) : movie.synopsis;
 
       const cardHtml = `
-        <div class="timeline-item-card glass-panel hover:border-mcu-red/60 p-4 rounded-xl border border-slate-800 transition-all cursor-pointer group shadow-xl">
-          <div class="flex gap-4 items-center">
-            <img src="${movie.poster}" alt="${movie.title}" class="w-16 h-24 object-cover rounded-lg border border-slate-700 flex-shrink-0" onerror="this.src='assets/images/posters/iron-man-2008.svg'">
-            <div class="flex-grow space-y-1">
+        <div class="timeline-item-card glass-panel hover:border-mcu-red/60 p-3.5 sm:p-4 rounded-xl border border-slate-800 transition-all cursor-pointer group shadow-xl">
+          <div class="flex gap-3 sm:gap-4 items-center">
+            <img src="${movie.poster}" alt="${displayTitle}" class="w-14 h-20 sm:w-16 sm:h-24 object-cover rounded-lg border border-slate-700 flex-shrink-0" onerror="this.src='assets/images/posters/iron-man-2008.svg'">
+            <div class="flex-grow space-y-1 min-w-0">
               <div class="flex items-center justify-between">
                 <span class="text-[9px] font-extrabold uppercase tracking-wider px-1.5 py-0.5 rounded ${getPhaseBadgeClass(movie.phase)}">
-                  ${movie.phase}
+                  ${getPhaseLabel(movie.phase)}
                 </span>
                 <span class="text-amber-400 text-xs font-bold">★ ${avgRating}</span>
               </div>
-              <h4 class="font-bebas text-lg text-white group-hover:text-mcu-red transition-colors">${movie.title}</h4>
-              <p class="text-[11px] text-slate-300 line-clamp-2">${movie.synopsis}</p>
+              <h4 class="font-bebas text-base sm:text-lg text-white group-hover:text-mcu-red transition-colors truncate">${displayTitle}</h4>
+              <p class="text-[11px] text-slate-300 line-clamp-2">${displaySynopsis}</p>
             </div>
           </div>
         </div>
       `;
 
       node.innerHTML = `
-        ${isEven ? `<div class="w-full md:w-1/2 px-4 md:px-8">${cardHtml}</div>` : '<div class="hidden md:block w-1/2"></div>'}
+        <!-- Desktop Left Slot (shown only on >= md for even items) -->
+        <div class="hidden md:block w-1/2 px-6 lg:px-8">
+          ${isEven ? cardHtml : ''}
+        </div>
         
-        <div class="z-20 flex flex-col items-center justify-center my-4 md:my-0 flex-shrink-0">
-          <div class="w-10 h-10 rounded-full bg-[#0C101A] border-2 border-mcu-red text-mcu-red flex items-center justify-center font-bold text-xs shadow-lg arc-pulse">
+        <!-- Timeline Node Circle Badge (Left on mobile, Center on desktop) -->
+        <div class="absolute left-0 md:static z-20 flex flex-col items-center justify-center flex-shrink-0 top-3 md:top-auto">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#0C101A] border-2 border-mcu-red text-mcu-red flex items-center justify-center font-bold text-xs shadow-lg arc-pulse">
             ${idx + 1}
           </div>
-          <span class="text-[10px] font-extrabold text-mcu-gold mt-1 bg-black/80 px-1.5 py-0.5 rounded border border-slate-800">
-            ${AppState.filters.order === 'chrono' ? movie.chronologicalYear : movie.releaseYear}
+          <span class="text-[9px] sm:text-[10px] font-extrabold text-mcu-gold mt-1 bg-black/90 px-1.5 py-0.5 rounded border border-slate-800 whitespace-nowrap">
+            ${yearText}
           </span>
         </div>
 
-        ${!isEven ? `<div class="w-full md:w-1/2 px-4 md:px-8">${cardHtml}</div>` : '<div class="hidden md:block w-1/2"></div>'}
+        <!-- Desktop Right Slot & Mobile Full-Width Slot -->
+        <div class="w-full md:w-1/2 md:px-6 lg:px-8">
+          ${isEven ? '<div class="md:hidden">' + cardHtml + '</div>' : cardHtml}
+        </div>
       `;
 
-      const cardEl = node.querySelector('.timeline-item-card');
-      if (cardEl) {
+      node.querySelectorAll('.timeline-item-card').forEach(cardEl => {
         cardEl.onclick = () => openMovieDetailModal(movie.id);
-      }
+      });
 
       container.appendChild(node);
     });
@@ -1384,8 +1733,9 @@
 
     const catalogTotal = window.MCU_CATALOG.length;
     const percent = Math.min(100, Math.round((completedCount / catalogTotal) * 100));
+    const isTh = AppState.currentLang === 'th';
     document.getElementById('watchlistProgressBar').style.width = `${percent}%`;
-    document.getElementById('watchlistPercentText').textContent = `${completedCount} of ${catalogTotal} Watched (${percent}%)`;
+    document.getElementById('watchlistPercentText').textContent = isTh ? `${completedCount} จาก ${catalogTotal} เรื่องที่ดูแล้ว (${percent}%)` : `${completedCount} of ${catalogTotal} Watched (${percent}%)`;
 
     const activeTab = document.querySelector('.watchlist-filter-btn.active');
     const activeStatus = activeTab ? activeTab.getAttribute('data-status') : 'all';
@@ -1410,25 +1760,26 @@
 
       const watchData = AppState.watchlist[movieId];
       const avgRating = getAverageRating(movie.id);
+      const displayTitle = isTh ? (movie.titleTh || movie.title) : movie.title;
 
       const card = document.createElement('div');
       card.className = 'glass-panel p-4 rounded-xl border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition-all';
 
       card.innerHTML = `
         <div class="flex gap-3">
-          <img src="${movie.poster}" alt="${movie.title}" class="w-16 h-24 object-cover rounded-lg border border-slate-700 flex-shrink-0 cursor-pointer" onerror="this.src='assets/images/posters/iron-man-2008.svg'">
+          <img src="${movie.poster}" alt="${displayTitle}" class="w-16 h-24 object-cover rounded-lg border border-slate-700 flex-shrink-0 cursor-pointer" onerror="this.src='assets/images/posters/iron-man-2008.svg'">
           <div class="flex-grow space-y-1">
-            <h4 class="font-bebas text-lg text-white hover:text-mcu-red transition-colors cursor-pointer truncate">${movie.title}</h4>
+            <h4 class="font-bebas text-lg text-white hover:text-mcu-red transition-colors cursor-pointer truncate">${displayTitle}</h4>
             <div class="text-[10px] text-slate-400 flex items-center justify-between">
-              <span>${movie.releaseYear} • ${movie.runtime}</span>
+              <span>${movie.releaseYear} • ${isTh ? movie.runtime.replace('min', ' นาที') : movie.runtime}</span>
               <span class="text-amber-400 font-bold">★ ${avgRating}</span>
             </div>
             
             <div class="pt-2">
               <select class="watchlist-status-select w-full bg-[#0A0D15] text-[11px] text-slate-200 border border-slate-700 rounded px-2 py-1 focus:outline-none focus:border-mcu-red">
-                <option value="want_to_watch" ${watchData.status === 'want_to_watch' ? 'selected' : ''}>To Watch ⏳</option>
-                <option value="watching" ${watchData.status === 'watching' ? 'selected' : ''}>Watching Now 🍿</option>
-                <option value="completed" ${watchData.status === 'completed' ? 'selected' : ''}>Completed ✓</option>
+                <option value="want_to_watch" ${watchData.status === 'want_to_watch' ? 'selected' : ''}>${isTh ? 'อยากดู' : 'To Watch'} ⏳</option>
+                <option value="watching" ${watchData.status === 'watching' ? 'selected' : ''}>${isTh ? 'กำลังดู' : 'Watching Now'} 🍿</option>
+                <option value="completed" ${watchData.status === 'completed' ? 'selected' : ''}>${isTh ? 'ดูแล้ว' : 'Completed'} ✓</option>
               </select>
             </div>
           </div>
@@ -1436,10 +1787,10 @@
 
         <div class="flex items-center justify-between pt-3 mt-3 border-t border-slate-800 text-xs">
           <button class="watchlist-review-btn text-mcu-cyan hover:text-white text-[11px] font-semibold flex items-center gap-1">
-            <i class="fa-solid fa-pen"></i> Review
+            <i class="fa-solid fa-pen"></i> ${isTh ? 'เขียนรีวิว' : 'Review'}
           </button>
           <button class="watchlist-remove-btn text-red-400 hover:text-red-300 text-[11px] font-semibold flex items-center gap-1">
-            <i class="fa-solid fa-trash-can"></i> Remove
+            <i class="fa-solid fa-trash-can"></i> ${isTh ? 'ลบออก' : 'Remove'}
           </button>
         </div>
       `;
@@ -1448,7 +1799,7 @@
         AppState.watchlist[movieId].status = e.target.value;
         saveWatchlist();
         renderWatchlist();
-        showToast(`Updated status for "${movie.title}"`, 'success');
+        showToast(isTh ? `อัปเดตสถานะ "${displayTitle}" แล้ว` : `Updated status for "${movie.title}"`, 'success');
       };
 
       card.querySelector('.watchlist-review-btn').onclick = () => openMovieDetailModal(movieId);
@@ -1572,20 +1923,71 @@
     catalogClear?.addEventListener('click', () => syncSearch(''));
     mobileSearch?.addEventListener('input', (e) => syncSearch(e.target.value));
 
+    // Carousel Slider Controls (Left & Right Buttons + Hover Pause)
+    const heroPrevBtn = document.getElementById('heroPrevBtn');
+    const heroNextBtn = document.getElementById('heroNextBtn');
+    const heroSpotlightEl = document.getElementById('heroSpotlight');
+
+    if (heroPrevBtn) {
+      heroPrevBtn.addEventListener('click', () => {
+        prevSpotlight();
+        startSpotlightTimer();
+      });
+    }
+    if (heroNextBtn) {
+      heroNextBtn.addEventListener('click', () => {
+        nextSpotlight();
+        startSpotlightTimer();
+      });
+    }
+    if (heroSpotlightEl) {
+      heroSpotlightEl.addEventListener('mouseenter', () => {
+        AppState.spotlightPaused = true;
+      });
+      heroSpotlightEl.addEventListener('mouseleave', () => {
+        AppState.spotlightPaused = false;
+      });
+    }
+
+    // Language Switcher Toggle Buttons (Header & Mobile Drawer)
+    const langToggleBtn = document.getElementById('langToggleBtn');
+    const mobileLangToggleBtn = document.getElementById('mobileLangToggleBtn');
+
+    function toggleLanguage() {
+      const nextLang = AppState.currentLang === 'th' ? 'en' : 'th';
+      applyLanguage(nextLang);
+      showToast(nextLang === 'th' ? 'สลับเป็นภาษาไทยเรียบร้อยแล้ว' : 'Switched to English', 'info');
+    }
+
+    if (langToggleBtn) {
+      langToggleBtn.addEventListener('click', toggleLanguage);
+    }
+    if (mobileLangToggleBtn) {
+      mobileLangToggleBtn.addEventListener('click', toggleLanguage);
+    }
+
     // Order toggle: Release Order vs Chronological Order
     const orderReleaseBtn = document.getElementById('orderReleaseBtn');
     const orderChronoBtn = document.getElementById('orderChronoBtn');
+    const sortSelect = document.getElementById('sortSelect');
+
     if (orderReleaseBtn && orderChronoBtn) {
       orderReleaseBtn.addEventListener('click', () => {
         AppState.filters.order = 'release';
-        orderReleaseBtn.className = 'order-toggle-btn active px-3 py-1 rounded bg-white/15 text-white transition-all flex items-center gap-1.5';
-        orderChronoBtn.className = 'order-toggle-btn px-3 py-1 rounded text-slate-400 hover:text-white transition-all flex items-center gap-1.5';
+        AppState.filters.sort = 'release_asc';
+        if (sortSelect) sortSelect.value = 'release_asc';
+        orderReleaseBtn.classList.add('active', 'bg-white/15', 'text-white');
+        orderReleaseBtn.classList.remove('text-slate-400');
+        orderChronoBtn.classList.remove('active', 'bg-white/15', 'text-white');
+        orderChronoBtn.classList.add('text-slate-400');
         renderCatalog();
       });
       orderChronoBtn.addEventListener('click', () => {
         AppState.filters.order = 'chrono';
-        orderChronoBtn.className = 'order-toggle-btn active px-3 py-1 rounded bg-white/15 text-white transition-all flex items-center gap-1.5';
-        orderReleaseBtn.className = 'order-toggle-btn px-3 py-1 rounded text-slate-400 hover:text-white transition-all flex items-center gap-1.5';
+        orderChronoBtn.classList.add('active', 'bg-white/15', 'text-white');
+        orderChronoBtn.classList.remove('text-slate-400');
+        orderReleaseBtn.classList.remove('active', 'bg-white/15', 'text-white');
+        orderReleaseBtn.classList.add('text-slate-400');
         renderCatalog();
       });
     }
@@ -1595,18 +1997,33 @@
     const releaseTimelineBtn = document.getElementById('timelineModeReleaseBtn');
     if (chronoTimelineBtn && releaseTimelineBtn) {
       chronoTimelineBtn.addEventListener('click', () => {
-        AppState.filters.order = 'chrono';
-        chronoTimelineBtn.className = 'px-5 py-2 rounded-lg bg-mcu-red text-white transition-all flex items-center gap-2';
-        releaseTimelineBtn.className = 'px-5 py-2 rounded-lg text-slate-300 hover:text-white transition-all flex items-center gap-2';
+        AppState.timelineOrder = 'chrono';
+        chronoTimelineBtn.className = 'px-3 sm:px-5 py-2 rounded-lg bg-mcu-red text-white transition-all flex items-center justify-center gap-2';
+        releaseTimelineBtn.className = 'px-3 sm:px-5 py-2 rounded-lg text-slate-300 hover:text-white transition-all flex items-center justify-center gap-2';
         renderTimeline();
       });
       releaseTimelineBtn.addEventListener('click', () => {
-        AppState.filters.order = 'release';
-        releaseTimelineBtn.className = 'px-5 py-2 rounded-lg bg-mcu-red text-white transition-all flex items-center gap-2';
-        chronoTimelineBtn.className = 'px-5 py-2 rounded-lg text-slate-300 hover:text-white transition-all flex items-center gap-2';
+        AppState.timelineOrder = 'release';
+        releaseTimelineBtn.className = 'px-3 sm:px-5 py-2 rounded-lg bg-mcu-red text-white transition-all flex items-center justify-center gap-2';
+        chronoTimelineBtn.className = 'px-3 sm:px-5 py-2 rounded-lg text-slate-300 hover:text-white transition-all flex items-center justify-center gap-2';
         renderTimeline();
       });
     }
+
+    // Timeline Universe Filter Pills
+    document.querySelectorAll('.timeline-univ-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        AppState.timelineUniverse = btn.getAttribute('data-univ');
+        document.querySelectorAll('.timeline-univ-btn').forEach(b => {
+          if (b.getAttribute('data-univ') === AppState.timelineUniverse) {
+            b.className = 'timeline-univ-btn active px-3 py-1 rounded-full text-xs font-bold bg-mcu-red text-white transition-all';
+          } else {
+            b.className = 'timeline-univ-btn px-3 py-1 rounded-full text-xs font-semibold bg-[#131A2B] text-slate-300 hover:text-white border border-slate-700 transition-all';
+          }
+        });
+        renderTimeline();
+      });
+    });
 
     // Saga Filters Group
     document.querySelectorAll('.saga-filter-btn').forEach(btn => {
@@ -1627,8 +2044,27 @@
     });
 
     // Sort select
-    document.getElementById('sortSelect')?.addEventListener('change', (e) => {
+    sortSelect?.addEventListener('change', (e) => {
       AppState.filters.sort = e.target.value;
+      if (e.target.value === 'release_asc') {
+        AppState.filters.order = 'release';
+        orderReleaseBtn?.classList.add('active', 'bg-white/15', 'text-white');
+        orderReleaseBtn?.classList.remove('text-slate-400');
+        orderChronoBtn?.classList.remove('active', 'bg-white/15', 'text-white');
+        orderChronoBtn?.classList.add('text-slate-400');
+      } else if (e.target.value === 'release_desc') {
+        AppState.filters.order = 'release_desc';
+        orderReleaseBtn?.classList.remove('active', 'bg-white/15', 'text-white');
+        orderReleaseBtn?.classList.add('text-slate-400');
+        orderChronoBtn?.classList.remove('active', 'bg-white/15', 'text-white');
+        orderChronoBtn?.classList.add('text-slate-400');
+      } else {
+        AppState.filters.order = 'custom';
+        orderReleaseBtn?.classList.remove('active', 'bg-white/15', 'text-white');
+        orderReleaseBtn?.classList.add('text-slate-400');
+        orderChronoBtn?.classList.remove('active', 'bg-white/15', 'text-white');
+        orderChronoBtn?.classList.add('text-slate-400');
+      }
       renderCatalog();
     });
 
@@ -1677,23 +2113,77 @@
     });
   }
 
+  function applyLanguage(lang) {
+    AppState.currentLang = lang;
+    localStorage.setItem(STORAGE_KEYS.LANG, lang);
+
+    const isTh = lang === 'th';
+    const langCurrentLabel = document.getElementById('langCurrentLabel');
+    const langAltLabel = document.getElementById('langAltLabel');
+    const mobileLangLabel = document.getElementById('mobileLangCurrentLabel');
+
+    if (langCurrentLabel && langAltLabel) {
+      if (isTh) {
+        langCurrentLabel.className = 'text-mcu-red font-bold';
+        langCurrentLabel.textContent = 'TH';
+        langAltLabel.className = 'text-slate-400 text-[11px]';
+        langAltLabel.textContent = 'EN';
+      } else {
+        langCurrentLabel.className = 'text-slate-400 text-[11px]';
+        langCurrentLabel.textContent = 'TH';
+        langAltLabel.className = 'text-mcu-red font-bold';
+        langAltLabel.textContent = 'EN';
+      }
+    }
+    if (mobileLangLabel) {
+      mobileLangLabel.textContent = isTh ? 'TH' : 'EN';
+    }
+
+    const t = TRANSLATIONS[lang] || TRANSLATIONS.th;
+
+    // Apply data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key]) {
+        el.textContent = t[key];
+      }
+    });
+
+    // Apply data-i18n-ph (placeholders)
+    document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+      const key = el.getAttribute('data-i18n-ph');
+      if (t[key]) {
+        el.setAttribute('placeholder', t[key]);
+      }
+    });
+
+    // Re-render views
+    renderHeroSpotlight();
+    renderHeroFilterStrip();
+    renderCatalog();
+    if (AppState.currentView === 'sagas') renderSagas();
+    if (AppState.currentView === 'characters') renderCharactersView();
+    if (AppState.currentView === 'timeline') renderTimeline();
+    if (AppState.currentView === 'watchlist') renderWatchlist();
+  }
+
   function updateSagaFilterButtons() {
     document.querySelectorAll('.saga-filter-btn').forEach(btn => {
-      if (btn.getAttribute('data-saga') === AppState.filters.saga) {
-        btn.className = 'saga-filter-btn active px-3 py-1 rounded bg-mcu-red text-white transition-all';
-      } else {
-        btn.className = 'saga-filter-btn px-3 py-1 rounded text-slate-300 hover:text-white transition-all';
-      }
+      const isActive = btn.getAttribute('data-saga') === AppState.filters.saga;
+      btn.classList.toggle('active', isActive);
+      btn.classList.toggle('bg-mcu-red', isActive);
+      btn.classList.toggle('text-white', isActive);
+      btn.classList.toggle('text-slate-300', !isActive);
     });
   }
 
   function updateTypeFilterButtons() {
     document.querySelectorAll('.type-filter-btn').forEach(btn => {
-      if (btn.getAttribute('data-type') === AppState.filters.type) {
-        btn.className = 'type-filter-btn active px-3 py-1 rounded bg-mcu-red text-white transition-all';
-      } else {
-        btn.className = 'type-filter-btn px-3 py-1 rounded text-slate-300 hover:text-white transition-all';
-      }
+      const isActive = btn.getAttribute('data-type') === AppState.filters.type;
+      btn.classList.toggle('active', isActive);
+      btn.classList.toggle('bg-mcu-red', isActive);
+      btn.classList.toggle('text-white', isActive);
+      btn.classList.toggle('text-slate-300', !isActive);
     });
   }
 
@@ -1703,15 +2193,16 @@
     AppState.filters.type = 'all';
     AppState.filters.hero = 'all';
     AppState.filters.order = 'release';
-    AppState.filters.sort = 'rating_desc';
+    AppState.filters.sort = 'release_asc';
 
     document.getElementById('catalogSearchInput').value = '';
     document.getElementById('headerSearchInput').value = '';
+    if (document.getElementById('sortSelect')) document.getElementById('sortSelect').value = 'release_asc';
     updateSagaFilterButtons();
     updateTypeFilterButtons();
     renderHeroFilterStrip();
     renderCatalog();
-    showToast('Filters reset to default', 'info');
+    showToast(AppState.currentLang === 'th' ? 'ล้างตัวกรองทั้งหมดแล้ว' : 'Filters reset to default', 'info');
   }
 
   function escapeHTML(str) {
@@ -1735,7 +2226,8 @@
     initReviewForm();
     updateNavAuthUI();
     updateWatchlistBadges();
-    renderHeroFilterStrip();
+
+    applyLanguage(AppState.currentLang);
 
     const initialHash = window.location.hash.replace('#', '');
     if (['browse', 'sagas', 'characters', 'timeline', 'watchlist'].includes(initialHash)) {
@@ -1746,14 +2238,7 @@
 
     renderHeroSpotlight();
     renderCatalog();
-
-    // Auto cycle spotlight every 8 seconds when idle
-    setInterval(() => {
-      if (AppState.currentView === 'browse' && !AppState.activeMovie) {
-        AppState.spotlightIndex = (AppState.spotlightIndex + 1) % AppState.spotlightIds.length;
-        renderHeroSpotlight();
-      }
-    }, 8000);
+    startSpotlightTimer();
   }
 
   if (document.readyState === 'loading') {
